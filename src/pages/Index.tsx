@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -38,6 +39,18 @@ const Index = () => {
     {
       name: "St Louis City",
       logo: "/lovable-uploads/238f9fa1-46ef-40f6-829d-dd7b76d1d515.png",
+    },
+    {
+      name: "Rinascita Refugees",
+      logo: "/lovable-uploads/07b7ddbb-c212-4d3f-9a29-90a917d885f6.png",
+    },
+    {
+      name: "Open Road",
+      logo: "/lovable-uploads/dbc858a8-0130-4422-9735-fcde12b228f6.png",
+    },
+    {
+      name: "Adobo",
+      logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png",
     },
   ];
 
