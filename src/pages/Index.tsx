@@ -230,11 +230,11 @@ const Index = () => {
             >
               Custom Amount
             </button>
-            <div className="flex items-center justify-center space-x-8 mt-8">
+            <div className="flex items-center justify-center space-x-8 mt-12">
               <img 
                 src="/lovable-uploads/d84235fe-12e4-4130-8f69-9c5b452446a5.png" 
                 alt="Payment methods: Mastercard, Visa, Google Pay, Apple Pay"
-                className="max-h-8 object-contain"
+                className="max-h-12 object-contain"
               />
             </div>
           </div>
