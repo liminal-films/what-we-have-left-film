@@ -286,7 +286,7 @@ const Index = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
                 { amount: 25, priceId: 'price_1Qsf4IIoUqNIiEfRO16RNdB1' },
-                { amount: 100, priceId: 'YOUR_PRICE_ID_100' },
+                { amount: 100, priceId: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL' },
                 { amount: 250, priceId: 'YOUR_PRICE_ID_250' }
               ].map(({ amount, priceId }) => (
                 <button
