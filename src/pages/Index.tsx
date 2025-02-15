@@ -98,7 +98,10 @@ const Index = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
                 className="btn-primary mt-8 text-lg px-12 py-4"
-                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                onClick={() => {
+                  const supportSection = document.getElementById('support-section');
+                  supportSection?.scrollIntoView({ behavior: 'smooth' });
+                }}
               >
                 Support the Film
               </motion.button>
@@ -194,26 +197,46 @@ const Index = () => {
       </section>
 
       {/* Donation Section */}
-      <section className="section-padding">
+      <section id="support-section" className="section-padding">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Support Our Film</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Support the Making of This Film</h2>
           <p className="text-lg mb-8">
             Help us bring this inspiring story to screens worldwide. Your contribution 
             will support the completion of this important documentary.
           </p>
           <div className="glass-card p-8 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[25, 50, 100].map((amount) => (
+              {[25, 100, 250].map((amount) => (
                 <button
                   key={amount}
-                  className="btn-primary"
+                  className="px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+                           shadow-lg shadow-[#ea384c]/20
+                           hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
+                           transition-all duration-300 
+                           transform hover:scale-105"
                   onClick={() => console.log(`Selected amount: ${amount}`)}
                 >
                   ${amount}
                 </button>
               ))}
             </div>
-            <button className="btn-primary w-full">Custom Amount</button>
+            <button 
+              className="px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+                       shadow-lg shadow-[#ea384c]/20
+                       hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
+                       transition-all duration-300 
+                       transform hover:scale-105
+                       w-full"
+            >
+              Custom Amount
+            </button>
+            <div className="flex items-center justify-center space-x-8 mt-8">
+              <img 
+                src="/lovable-uploads/d84235fe-12e4-4130-8f69-9c5b452446a5.png" 
+                alt="Payment methods: Mastercard, Visa, Google Pay, Apple Pay"
+                className="max-h-8 object-contain"
+              />
+            </div>
           </div>
         </div>
       </section>
