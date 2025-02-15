@@ -85,7 +85,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/3562711b-2987-45af-a80d-e7cf4691da0c.png"
                 alt="Rinascita Refugees Logo" 
-                className="inline-block mx-2 h-6 md:h-8"
+                className="inline-block mx-2 h-10 md:h-14"
               />
               DOCUMENTARY FILM
             </h2>
