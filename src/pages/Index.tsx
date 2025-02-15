@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -14,6 +13,11 @@ const Index = () => {
     threshold: 0.1,
   });
 
+  const [partnersRef, partnersInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   useEffect(() => {
     // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = "smooth";
@@ -21,6 +25,29 @@ const Index = () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
+
+  const partners = [
+    {
+      name: "Rinascita Refugees",
+      logo: "/lovable-uploads/1aa578f1-f9ba-47cf-b019-c2eb79b32ea1.png",
+    },
+    {
+      name: "Legendary",
+      logo: "/lovable-uploads/fdf444a8-4f38-4a63-bc03-2aa4409820a9.png",
+    },
+    {
+      name: "Open Road",
+      logo: "/lovable-uploads/3c474b81-fcee-41c9-ba26-f4b47d69653f.png",
+    },
+    {
+      name: "Touchstone Films",
+      logo: "/lovable-uploads/6ebaf91b-0323-4f0e-a6ac-d03fa206baa3.png",
+    },
+    {
+      name: "Adobo",
+      logo: "/lovable-uploads/8b6112e0-c012-4e67-86fe-fef5cc318913.png",
+    },
+  ];
 
   return (
     <div className="overflow-x-hidden">
@@ -97,6 +124,40 @@ const Index = () => {
                 alt="Team celebration"
                 className="absolute inset-0 w-full h-full object-cover"
               />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Partners Section */}
+      <section ref={partnersRef} className="section-padding bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={partnersInView ? { y: 0, opacity: 1 } : {}}
+            transition={{ duration: 0.8 }}
+            className="text-center space-y-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold">Our Partners</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+              {partners.map((partner, index) => (
+                <motion.div
+                  key={partner.name}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={partnersInView ? { y: 0, opacity: 1 } : {}}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.1,
+                  }}
+                  className="flex items-center justify-center p-4"
+                >
+                  <img
+                    src={partner.logo}
+                    alt={partner.name}
+                    className="max-h-16 md:max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                  />
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
