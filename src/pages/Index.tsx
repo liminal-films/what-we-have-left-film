@@ -111,7 +111,7 @@ const Index = () => {
             initial={{ y: 50, opacity: 0 }}
             animate={storyInView ? { y: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
           >
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">The Story</h2>
@@ -126,13 +126,31 @@ const Index = () => {
                 professionals, tells their extraordinary journey from West Africa 
                 to becoming one of Puglia's top football teams.
               </p>
+              <div className="mt-8">
+                <img
+                  src="/lovable-uploads/ce47ea8a-92db-41b0-baaf-86b945b53654.png"
+                  alt="FIGC Medal"
+                  className="w-full max-w-md mx-auto rounded-lg shadow-lg"
+                />
+                <p className="text-sm text-gray-600 mt-3 text-center italic">
+                  Recognition from the Italian Football Federation (FIGC)
+                </p>
+              </div>
             </div>
-            <div className="relative h-[400px] md:h-[600px] rounded-2xl overflow-hidden">
-              <img
-                src="/lovable-uploads/45693f03-91dd-4146-940e-66c8d8d45230.png"
-                alt="Team celebration"
-                className="absolute inset-0 w-full h-full object-cover"
-              />
+            <div className="space-y-8">
+              <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src="/lovable-uploads/8074a65f-87a5-436a-af92-a0957fca2845.png"
+                  alt="Team member in red jersey"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="bg-black/5 p-6 rounded-lg">
+                <p className="text-lg leading-relaxed">
+                  Through football, these young men have found not just a team, but a family. 
+                  Their story is one of perseverance, unity, and the transformative power of sport.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
