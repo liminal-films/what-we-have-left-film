@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -93,7 +94,9 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="btn-primary mt-8 text-lg"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="btn-primary mt-8 text-lg px-12 py-4"
               onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
             >
               Support the Film
