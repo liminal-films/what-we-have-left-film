@@ -10,6 +10,8 @@ const Index = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
+  const [customAmount, setCustomAmount] = useState("");
+  const [showCustomAmount, setShowCustomAmount] = useState(false);
 
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
@@ -304,24 +306,56 @@ const Index = () => {
                 </button>
               ))}
             </div>
-            <button 
-              className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
-                       shadow-lg shadow-[#ea384c]/20
-                       hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
-                       transition-all duration-300 
-                       transform hover:scale-105
-                       w-full
-                       disabled:opacity-50 disabled:cursor-not-allowed`}
-              onClick={() => {
-                toast({
-                  title: "Coming Soon",
-                  description: "Custom amount donations will be available soon!",
-                });
-              }}
-              disabled={isProcessing}
-            >
-              Custom Amount
-            </button>
+            <div className="space-y-4">
+              {showCustomAmount ? (
+                <div className="space-y-4">
+                  <input
+                    type="number"
+                    min="1"
+                    placeholder="Enter amount in USD"
+                    value={customAmount}
+                    onChange={(e) => setCustomAmount(e.target.value)}
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
+                  />
+                  <button 
+                    className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+                             shadow-lg shadow-[#ea384c]/20
+                             hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
+                             transition-all duration-300 
+                             transform hover:scale-105
+                             w-full
+                             disabled:opacity-50 disabled:cursor-not-allowed`}
+                    onClick={() => handleDonation(Number(customAmount), 'price_1Qsf4IIoUqNIiEfRUD67iqzk')}
+                    disabled={isProcessing || !customAmount || Number(customAmount) < 1}
+                  >
+                    Donate ${customAmount}
+                  </button>
+                  <button
+                    className="text-gray-600 underline"
+                    onClick={() => {
+                      setShowCustomAmount(false);
+                      setCustomAmount("");
+                    }}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              ) : (
+                <button 
+                  className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+                           shadow-lg shadow-[#ea384c]/20
+                           hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
+                           transition-all duration-300 
+                           transform hover:scale-105
+                           w-full
+                           disabled:opacity-50 disabled:cursor-not-allowed`}
+                  onClick={() => setShowCustomAmount(true)}
+                  disabled={isProcessing}
+                >
+                  Custom Amount
+                </button>
+              )}
+            </div>
             <div className="flex items-center justify-center space-x-8 mt-12">
               <img 
                 src="/lovable-uploads/d84235fe-12e4-4130-8f69-9c5b452446a5.png" 
