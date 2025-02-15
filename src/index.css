@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -24,12 +25,15 @@
   }
   
   .btn-primary {
-    @apply px-8 py-3 bg-[#0EA5E9] text-white rounded-full font-semibold 
-           shadow-lg shadow-[#0EA5E9]/20
-           hover:bg-[#0EA5E9]/90 hover:shadow-[#0EA5E9]/30
+    @apply px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+           shadow-lg shadow-[#ea384c]/20
+           hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
            transition-all duration-300 
            transform hover:scale-105
-           border border-white/20 backdrop-blur-sm;
+           relative
+           after:absolute after:inset-0
+           after:rounded-full after:border-2 after:border-white/30
+           after:animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
   }
 }
 
@@ -50,5 +54,16 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.5;
   }
 }
