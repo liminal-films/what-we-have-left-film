@@ -21,8 +21,8 @@ serve(async (req) => {
 
     const { priceId, successUrl, cancelUrl, email, name } = await req.json()
 
-    // Create Stripe checkout session
-    const session = await stripe.checkout.sessions.create({
+    // Create session configuration
+    const sessionConfig: any = {
       payment_method_types: ['card'],
       line_items: [
         {
@@ -33,11 +33,20 @@ serve(async (req) => {
       mode: 'payment',
       success_url: successUrl,
       cancel_url: cancelUrl,
-      customer_email: email,
-      metadata: {
-        name: name,
-      },
-    })
+    }
+
+    // Only add email if provided
+    if (email) {
+      sessionConfig.customer_email = email;
+    }
+
+    // Only add metadata if name is provided
+    if (name) {
+      sessionConfig.metadata = { name };
+    }
+
+    // Create Stripe checkout session
+    const session = await stripe.checkout.sessions.create(sessionConfig)
 
     // Create initial donation record
     const supabase = createClient(
@@ -47,13 +56,17 @@ serve(async (req) => {
 
     const amount = session.amount_total ? session.amount_total / 100 : 0
     
-    await supabase.from('donations').insert({
+    // Create donation record with optional fields
+    const donationData: any = {
       amount,
       status: 'pending',
       stripe_payment_id: session.id,
-      email,
-      name,
-    })
+    }
+
+    if (email) donationData.email = email;
+    if (name) donationData.name = name;
+
+    await supabase.from('donations').insert(donationData)
 
     return new Response(
       JSON.stringify({ sessionId: session.id, sessionUrl: session.url }),
