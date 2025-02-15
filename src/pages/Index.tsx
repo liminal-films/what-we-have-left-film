@@ -44,46 +44,80 @@ const Index = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="hero-section">
+      <section ref={heroRef} className="relative min-h-screen">
+        <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2 }}
+            className="relative overflow-hidden"
+          >
+            <img
+              src="/lovable-uploads/9803f71f-6884-4f6d-9817-4737d49299ea.png"
+              alt="Rinascita Team"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.2 }}
+            className="relative overflow-hidden"
+          >
+            <img
+              src="/lovable-uploads/9372e398-a96b-443e-a3f8-48216820affc.png"
+              alt="Football action"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.4 }}
+            className="relative overflow-hidden"
+          >
+            <img
+              src="/lovable-uploads/2a66fd8b-5f9e-4374-8be8-e9480d336c00.png"
+              alt="Training session"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 1.2, delay: 0.6 }}
+            className="relative overflow-hidden"
+          >
+            <img
+              src="/lovable-uploads/109a4b40-e99a-47b6-867d-8fa5c606924f.png"
+              alt="Team spirit"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          </motion.div>
+        </div>
+        
+        <div className="absolute inset-0 bg-black/60" />
+        
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={heroInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1 }}
-          className="relative w-full h-screen"
+          initial={{ opacity: 0, y: 20 }}
+          animate={heroInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="relative h-screen flex flex-col items-center justify-center text-white px-4 space-y-8"
         >
-          <img
-            src="/lovable-uploads/dba30203-495e-4415-b96f-7c5bfcc5bd8a.png"
-            alt="Rinascita Refugees"
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/50" />
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-4">
-            <motion.h1
-              initial={{ y: 30, opacity: 0 }}
-              animate={heroInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ delay: 0.2, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-bold text-center mb-6"
-            >
-              Rinascita Refugees
-            </motion.h1>
-            <motion.p
-              initial={{ y: 30, opacity: 0 }}
-              animate={heroInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="text-xl md:text-2xl text-center max-w-2xl mb-8"
-            >
-              A story of hope, resilience, and the beautiful game
-            </motion.p>
-            <motion.button
-              initial={{ y: 30, opacity: 0 }}
-              animate={heroInView ? { y: 0, opacity: 1 } : {}}
-              transition={{ delay: 0.6, duration: 0.8 }}
-              className="btn-primary"
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-            >
-              Support the Film
-            </motion.button>
-          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-center tracking-wider">
+            RINASCITA
+            <br />
+            REFUGEES
+          </h1>
+          <p className="text-xl md:text-2xl text-center max-w-2xl opacity-90">
+            A story of hope, resilience, and the beautiful game
+          </p>
+          <button
+            className="btn-primary mt-8"
+            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+          >
+            Support the Film
+          </button>
         </motion.div>
       </section>
 
