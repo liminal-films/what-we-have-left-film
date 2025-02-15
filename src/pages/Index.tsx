@@ -1,9 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/components/ui/use-toast";
 
 const Index = () => {
+  const { toast } = useToast();
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [isProcessing, setIsProcessing] = useState(false);
+
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -53,9 +60,61 @@ const Index = () => {
     }
   ];
 
+  const handleDonation = async (amount: number, priceId: string) => {
+    try {
+      setIsProcessing(true);
+      
+      const { data, error } = await supabase.functions.invoke('create-checkout', {
+        body: {
+          priceId,
+          email,
+          name,
+          successUrl: `${window.location.origin}?success=true`,
+          cancelUrl: `${window.location.origin}?canceled=true`,
+        },
+      });
+
+      if (error) throw error;
+
+      // Redirect to Stripe Checkout
+      if (data.sessionUrl) {
+        window.location.href = data.sessionUrl;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      toast({
+        title: "Error",
+        description: "There was a problem processing your donation. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessing(false);
+    }
+  };
+
+  useEffect(() => {
+    // Check for success/canceled URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success')) {
+      toast({
+        title: "Thank you for your donation!",
+        description: "Your support means the world to us.",
+      });
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (urlParams.get('canceled')) {
+      toast({
+        title: "Donation canceled",
+        description: "No worries! You can try again whenever you're ready.",
+        variant: "destructive",
+      });
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, [toast]);
+
   return (
     <div className="overflow-x-hidden">
-      {/* Hero Section */}
       <section ref={heroRef} className="relative min-h-screen p-8">
         <div className="absolute inset-8 border-[3px] border-white/30 z-10" />
         <motion.div 
@@ -116,7 +175,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Story Section */}
       <section ref={storyRef} className="section-padding bg-warm-gray">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -168,7 +226,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Partners Section */}
       <section ref={partnersRef} className="section-padding bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
@@ -202,7 +259,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Donation Section */}
       <section id="support-section" className="section-padding">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Support the Making of This Film</h2>
@@ -211,28 +267,58 @@ const Index = () => {
             will support the completion of this important documentary.
           </p>
           <div className="glass-card p-8 space-y-6">
+            <div className="space-y-4 mb-6">
+              <input
+                type="email"
+                placeholder="Your email (optional)"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
+              />
+              <input
+                type="text"
+                placeholder="Your name (optional)"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
+              />
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[25, 100, 250].map((amount) => (
+              {[
+                { amount: 25, priceId: 'YOUR_PRICE_ID_25' },
+                { amount: 100, priceId: 'YOUR_PRICE_ID_100' },
+                { amount: 250, priceId: 'YOUR_PRICE_ID_250' }
+              ].map(({ amount, priceId }) => (
                 <button
                   key={amount}
-                  className="px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+                  className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
                            shadow-lg shadow-[#ea384c]/20
                            hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
                            transition-all duration-300 
-                           transform hover:scale-105"
-                  onClick={() => console.log(`Selected amount: ${amount}`)}
+                           transform hover:scale-105
+                           disabled:opacity-50 disabled:cursor-not-allowed`}
+                  onClick={() => handleDonation(amount, priceId)}
+                  disabled={isProcessing}
                 >
                   ${amount}
                 </button>
               ))}
             </div>
             <button 
-              className="px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+              className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
                        shadow-lg shadow-[#ea384c]/20
                        hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
                        transition-all duration-300 
                        transform hover:scale-105
-                       w-full"
+                       w-full
+                       disabled:opacity-50 disabled:cursor-not-allowed`}
+              onClick={() => {
+                toast({
+                  title: "Coming Soon",
+                  description: "Custom amount donations will be available soon!",
+                });
+              }}
+              disabled={isProcessing}
             >
               Custom Amount
             </button>
@@ -247,7 +333,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer Section */}
       <footer className="bg-[#1A1F2C] text-white/80">
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
