@@ -5,6 +5,18 @@ import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 
+const oneTimePriceIds = {
+  25: 'price_1Qsf4IIoUqNIiEfRO16RNdB1',
+  100: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL',
+  250: 'price_1Qsf4IIoUqNIiEfRylxI49Rq'
+};
+
+const recurringPriceIds = {
+  25: 'price_1QsfYVIoUqNIiEfRdyxxD5W3',
+  100: 'price_1QsfYVIoUqNIiEfRScITTLRj',
+  250: 'price_1QsfYVIoUqNIiEfRoR2oF9N7'
+};
+
 const Index = () => {
   const { toast } = useToast();
   const [email, setEmail] = useState("");
