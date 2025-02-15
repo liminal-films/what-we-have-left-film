@@ -28,24 +28,16 @@ const Index = () => {
 
   const partners = [
     {
-      name: "Rinascita Refugees",
-      logo: "/lovable-uploads/1aa578f1-f9ba-47cf-b019-c2eb79b32ea1.png",
+      name: "Virtual",
+      logo: "/lovable-uploads/455dadc0-1a69-4fe8-9df8-dc3709e93d74.png",
     },
     {
-      name: "Legendary",
-      logo: "/lovable-uploads/fdf444a8-4f38-4a63-bc03-2aa4409820a9.png",
+      name: "Liverpool FC",
+      logo: "/lovable-uploads/585a9cdb-524f-47c2-86e7-ca55714a2907.png",
     },
     {
-      name: "Open Road",
-      logo: "/lovable-uploads/3c474b81-fcee-41c9-ba26-f4b47d69653f.png",
-    },
-    {
-      name: "Touchstone Films",
-      logo: "/lovable-uploads/6ebaf91b-0323-4f0e-a6ac-d03fa206baa3.png",
-    },
-    {
-      name: "Adobo",
-      logo: "/lovable-uploads/8b6112e0-c012-4e67-86fe-fef5cc318913.png",
+      name: "St Louis City",
+      logo: "/lovable-uploads/238f9fa1-46ef-40f6-829d-dd7b76d1d515.png",
     },
   ];
 
@@ -139,7 +131,7 @@ const Index = () => {
             className="text-center space-y-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold">Our Partners</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+            <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-12 md:gap-16">
               {partners.map((partner, index) => (
                 <motion.div
                   key={partner.name}
@@ -149,12 +141,12 @@ const Index = () => {
                     duration: 0.5,
                     delay: index * 0.1,
                   }}
-                  className="flex items-center justify-center p-4"
+                  className="w-40 h-32 flex items-center justify-center p-4"
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="max-h-16 md:max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   />
                 </motion.div>
               ))}
