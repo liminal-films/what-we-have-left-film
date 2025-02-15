@@ -81,7 +81,13 @@ const Index = () => {
             className="text-center space-y-8"
           >
             <h2 className="text-white text-xl md:text-2xl font-light tracking-[0.2em] uppercase mb-4">
-              A Documentary Film
+              A 
+              <img 
+                src="/lovable-uploads/3562711b-2987-45af-a80d-e7cf4691da0c.png"
+                alt="Rinascita Refugees Logo" 
+                className="inline-block mx-2 h-6 md:h-8"
+              />
+              DOCUMENTARY FILM
             </h2>
             <h1 className="text-white text-5xl md:text-8xl font-bold tracking-wider leading-none">
               RINASCITA
