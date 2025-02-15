@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -27,21 +28,29 @@ const Index = () => {
 
   const partners = [
     {
-      name: "FIGC",
-      logo: "/lovable-uploads/57a18b7e-0cd2-4e54-ba64-3c50750a1a9e.png",
+      name: "Virtual",
+      logo: "/lovable-uploads/455dadc0-1a69-4fe8-9df8-dc3709e93d74.png",
     },
     {
-      name: "RETE",
-      logo: "/lovable-uploads/4c26d9d9-18bb-4e3f-8a08-f3f3520135e0.png",
+      name: "Liverpool FC",
+      logo: "/lovable-uploads/585a9cdb-524f-47c2-86e7-ca55714a2907.png",
     },
     {
-      name: "ASD",
-      logo: "/lovable-uploads/2a79fd42-01f0-4f0f-a1cd-562a8ad1ad01.png",
+      name: "St Louis City",
+      logo: "/lovable-uploads/238f9fa1-46ef-40f6-829d-dd7b76d1d515.png",
     },
     {
-      name: "Givova",
-      logo: "/lovable-uploads/171c6461-371e-49db-86a5-abf21a5d7744.png",
+      name: "Rinascita Refugees",
+      logo: "/lovable-uploads/07b7ddbb-c212-4d3f-9a29-90a917d885f6.png",
     },
+    {
+      name: "Open Road",
+      logo: "/lovable-uploads/dbc858a8-0130-4422-9735-fcde12b228f6.png",
+    },
+    {
+      name: "Adobo",
+      logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png",
+    }
   ];
 
   return (
@@ -138,7 +147,7 @@ const Index = () => {
             className="text-center space-y-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold">Our Partners</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
               {partners.map((partner, index) => (
                 <motion.div
                   key={partner.name}
