@@ -287,7 +287,7 @@ const Index = () => {
               {[
                 { amount: 25, priceId: 'price_1Qsf4IIoUqNIiEfRO16RNdB1' },
                 { amount: 100, priceId: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL' },
-                { amount: 250, priceId: 'YOUR_PRICE_ID_250' }
+                { amount: 250, priceId: 'price_1Qsf4IIoUqNIiEfRylxI49Rq' }
               ].map(({ amount, priceId }) => (
                 <button
                   key={amount}
