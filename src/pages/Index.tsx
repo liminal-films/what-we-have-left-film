@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -83,10 +82,9 @@ const Index = () => {
             <h2 className="text-white text-xl md:text-2xl font-light tracking-[0.2em] uppercase mb-4">
               A Documentary Film
             </h2>
-            <h1 className="text-white text-5xl md:text-8xl font-bold tracking-wider leading-tight">
+            <h1 className="text-white text-5xl md:text-8xl font-bold tracking-wider leading-none">
               RINASCITA
-              <br />
-              <span className="text-4xl md:text-7xl">REFUGEES</span>
+              <span className="text-4xl md:text-7xl block mt-2">REFUGEES</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
               A story of hope, resilience, and the beautiful game
