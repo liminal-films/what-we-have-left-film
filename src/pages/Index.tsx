@@ -134,7 +134,7 @@ const Index = () => {
         
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
         
-        <div className="relative h-screen flex flex-col items-center justify-center px-4">
+        <div className="relative h-screen flex flex-col items-center justify-center px-4 z-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={heroInView ? { opacity: 1, y: 0 } : {}}
@@ -164,7 +164,7 @@ const Index = () => {
                 transition={{ duration: 0.8, delay: 1.2 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="btn-primary mt-8 text-lg px-12 py-4"
+                className="btn-primary mt-8 text-lg px-12 py-4 relative z-30"
                 onClick={() => {
                   const supportSection = document.getElementById('support-section');
                   supportSection?.scrollIntoView({ behavior: 'smooth' });
