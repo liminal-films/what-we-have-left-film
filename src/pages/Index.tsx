@@ -62,6 +62,29 @@ const Index = () => {
     }
   ];
 
+  useEffect(() => {
+    // Check for success/canceled URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success')) {
+      toast({
+        title: "Thank you for your donation!",
+        description: "Your support means the world to us.",
+        className: "bg-white text-black border border-gray-200",
+      });
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else if (urlParams.get('canceled')) {
+      toast({
+        title: "Donation canceled",
+        description: "No worries! You can try again whenever you're ready.",
+        variant: "destructive",
+        className: "bg-white text-black border border-gray-200",
+      });
+      // Clean URL
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }, [toast]);
+
   const handleDonation = async (amount: number, priceId: string) => {
     try {
       setIsProcessing(true);
@@ -88,32 +111,12 @@ const Index = () => {
         title: "Error",
         description: "There was a problem processing your donation. Please try again.",
         variant: "destructive",
+        className: "bg-white text-black border border-gray-200",
       });
     } finally {
       setIsProcessing(false);
     }
   };
-
-  useEffect(() => {
-    // Check for success/canceled URL parameters
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success')) {
-      toast({
-        title: "Thank you for your donation!",
-        description: "Your support means the world to us.",
-      });
-      // Clean URL
-      window.history.replaceState({}, document.title, window.location.pathname);
-    } else if (urlParams.get('canceled')) {
-      toast({
-        title: "Donation canceled",
-        description: "No worries! You can try again whenever you're ready.",
-        variant: "destructive",
-      });
-      // Clean URL
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }, [toast]);
 
   return (
     <div className="overflow-x-hidden">
