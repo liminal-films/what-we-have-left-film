@@ -56,7 +56,8 @@ const Index = () => {
   return (
     <div className="overflow-x-hidden">
       {/* Hero Section */}
-      <section ref={heroRef} className="relative min-h-screen">
+      <section ref={heroRef} className="relative min-h-screen p-8">
+        <div className="absolute inset-8 border-[3px] border-white/30 z-10" />
         <motion.div 
           initial={{ scale: 1.1 }}
           animate={heroInView ? { scale: 1 } : {}}
