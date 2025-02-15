@@ -34,10 +34,18 @@ serve(async (req) => {
     if (event.type === 'checkout.session.completed') {
       const session = event.data.object
 
+      // Get payment details from Stripe
+      const paymentIntent = await stripe.paymentIntents.retrieve(session.payment_intent as string)
+      const amount = paymentIntent.amount / 100 // Convert from cents to dollars
+
       // Update donation status
       const { error } = await supabase
         .from('donations')
-        .update({ status: 'completed' })
+        .update({ 
+          status: 'completed',
+          amount: amount, // Update with the actual amount paid
+          payment_type: 'single' // Since we're only handling single payments for now
+        })
         .eq('stripe_payment_id', session.id)
 
       if (error) {

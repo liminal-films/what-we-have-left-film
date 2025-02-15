@@ -16,6 +16,7 @@ export type Database = {
           email: string | null
           id: string
           name: string | null
+          payment_type: string
           status: string
           stripe_payment_id: string | null
         }
@@ -25,6 +26,7 @@ export type Database = {
           email?: string | null
           id?: string
           name?: string | null
+          payment_type?: string
           status: string
           stripe_payment_id?: string | null
         }
@@ -34,6 +36,7 @@ export type Database = {
           email?: string | null
           id?: string
           name?: string | null
+          payment_type?: string
           status?: string
           stripe_payment_id?: string | null
         }
