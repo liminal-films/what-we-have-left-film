@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -50,6 +51,22 @@ const Index = () => {
       name: "Adobo",
       logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png",
     },
+    {
+      name: "FIGC",
+      logo: "/lovable-uploads/57a18b7e-0cd2-4e54-ba64-3c50750a1a9e.png",
+    },
+    {
+      name: "RETE",
+      logo: "/lovable-uploads/4c26d9d9-18bb-4e3f-8a08-f3f3520135e0.png",
+    },
+    {
+      name: "ASD",
+      logo: "/lovable-uploads/2a79fd42-01f0-4f0f-a1cd-562a8ad1ad01.png",
+    },
+    {
+      name: "Givova",
+      logo: "/lovable-uploads/171c6461-371e-49db-86a5-abf21a5d7744.png",
+    },
   ];
 
   return (
@@ -63,20 +80,13 @@ const Index = () => {
           className="absolute inset-0"
         >
           <img
-            src="/lovable-uploads/9803f71f-6884-4f6d-9817-4737d49299ea.png"
-            alt="Rinascita Team"
+            src="/lovable-uploads/45693f03-91dd-4146-940e-66c8d8d45230.png"
+            alt="Team celebration"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </motion.div>
         
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={heroInView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="absolute inset-0 bg-black/20"
-        />
         
         <div className="relative h-screen flex flex-col items-center justify-center px-4">
           <motion.div
@@ -153,7 +163,7 @@ const Index = () => {
             className="text-center space-y-12"
           >
             <h2 className="text-3xl md:text-4xl font-bold">Our Partners</h2>
-            <div className="flex flex-wrap md:flex-nowrap justify-center items-center gap-12 md:gap-16">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 items-center justify-items-center">
               {partners.map((partner, index) => (
                 <motion.div
                   key={partner.name}
@@ -163,12 +173,12 @@ const Index = () => {
                     duration: 0.5,
                     delay: index * 0.1,
                   }}
-                  className="w-40 h-32 flex items-center justify-center p-4"
+                  className="w-32 h-24 flex items-center justify-center p-4"
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="max-h-24 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
                   />
                 </motion.div>
               ))}
