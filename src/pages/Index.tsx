@@ -12,6 +12,7 @@ const Index = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [customAmount, setCustomAmount] = useState("");
   const [showCustomAmount, setShowCustomAmount] = useState(false);
+  const [isRecurring, setIsRecurring] = useState(false);
 
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
@@ -272,28 +273,24 @@ const Index = () => {
             will support the completion of this important documentary.
           </p>
           <div className="glass-card p-8 space-y-6">
-            <div className="space-y-4 mb-6">
-              <input
-                type="email"
-                placeholder="Your email (optional)"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
-              />
-              <input
-                type="text"
-                placeholder="Your name (optional)"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
-              />
+            <div className="flex justify-center mb-6">
+              <div className="inline-flex items-center bg-gray-100 rounded-full p-1">
+                <button
+                  className={`px-4 py-2 rounded-full transition-all ${!isRecurring ? 'bg-white shadow-md' : ''}`}
+                  onClick={() => setIsRecurring(false)}
+                >
+                  One-time
+                </button>
+                <button
+                  className={`px-4 py-2 rounded-full transition-all ${isRecurring ? 'bg-white shadow-md' : ''}`}
+                  onClick={() => setIsRecurring(true)}
+                >
+                  Monthly
+                </button>
+              </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                { amount: 25, priceId: 'price_1Qsf4IIoUqNIiEfRO16RNdB1' },
-                { amount: 100, priceId: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL' },
-                { amount: 250, priceId: 'price_1Qsf4IIoUqNIiEfRylxI49Rq' }
-              ].map(({ amount, priceId }) => (
+              {[25, 100, 250].map((amount) => (
                 <button
                   key={amount}
                   className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
@@ -302,24 +299,52 @@ const Index = () => {
                            transition-all duration-300 
                            transform hover:scale-105
                            disabled:opacity-50 disabled:cursor-not-allowed`}
-                  onClick={() => handleDonation(amount, priceId)}
+                  onClick={() => handleDonation(
+                    amount,
+                    isRecurring ? recurringPriceIds[amount] : oneTimePriceIds[amount]
+                  )}
                   disabled={isProcessing}
                 >
-                  ${amount}
+                  ${amount}{isRecurring ? '/month' : ''}
                 </button>
               ))}
             </div>
-            <div className="space-y-4">
-              {showCustomAmount ? (
-                <div className="space-y-4">
-                  <input
-                    type="number"
-                    min="1"
-                    placeholder="Enter amount in USD"
-                    value={customAmount}
-                    onChange={(e) => setCustomAmount(e.target.value)}
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
-                  />
+            {!isRecurring && (
+              <div className="space-y-4">
+                {showCustomAmount ? (
+                  <div className="space-y-4">
+                    <input
+                      type="number"
+                      min="1"
+                      placeholder="Enter amount in USD"
+                      value={customAmount}
+                      onChange={(e) => setCustomAmount(e.target.value)}
+                      className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]"
+                    />
+                    <button 
+                      className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
+                               shadow-lg shadow-[#ea384c]/20
+                               hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
+                               transition-all duration-300 
+                               transform hover:scale-105
+                               w-full
+                               disabled:opacity-50 disabled:cursor-not-allowed`}
+                      onClick={() => handleDonation(Number(customAmount), 'price_1Qsf4IIoUqNIiEfRUD67iqzk')}
+                      disabled={isProcessing || !customAmount || Number(customAmount) < 1}
+                    >
+                      Donate ${customAmount}
+                    </button>
+                    <button
+                      className="text-gray-600 underline"
+                      onClick={() => {
+                        setShowCustomAmount(false);
+                        setCustomAmount("");
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                ) : (
                   <button 
                     className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
                              shadow-lg shadow-[#ea384c]/20
@@ -328,37 +353,14 @@ const Index = () => {
                              transform hover:scale-105
                              w-full
                              disabled:opacity-50 disabled:cursor-not-allowed`}
-                    onClick={() => handleDonation(Number(customAmount), 'price_1Qsf4IIoUqNIiEfRUD67iqzk')}
-                    disabled={isProcessing || !customAmount || Number(customAmount) < 1}
+                    onClick={() => setShowCustomAmount(true)}
+                    disabled={isProcessing}
                   >
-                    Donate ${customAmount}
+                    Custom Amount
                   </button>
-                  <button
-                    className="text-gray-600 underline"
-                    onClick={() => {
-                      setShowCustomAmount(false);
-                      setCustomAmount("");
-                    }}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              ) : (
-                <button 
-                  className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
-                           shadow-lg shadow-[#ea384c]/20
-                           hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
-                           transition-all duration-300 
-                           transform hover:scale-105
-                           w-full
-                           disabled:opacity-50 disabled:cursor-not-allowed`}
-                  onClick={() => setShowCustomAmount(true)}
-                  disabled={isProcessing}
-                >
-                  Custom Amount
-                </button>
-              )}
-            </div>
+                )}
+              </div>
+            )}
             <div className="flex items-center justify-center space-x-8 mt-12">
               <img 
                 src="/lovable-uploads/d84235fe-12e4-4130-8f69-9c5b452446a5.png" 
