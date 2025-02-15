@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -31,9 +30,9 @@
            transition-all duration-300 
            transform hover:scale-105
            relative
-           after:absolute after:inset-0
-           after:rounded-full after:border-2 after:border-white/30
-           after:animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
+           after:absolute after:inset-[-4px]
+           after:rounded-full after:border-[3px] after:border-[#ea384c]/60
+           after:animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite];
   }
 }
 
@@ -60,10 +59,10 @@
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.8;
   }
   50% {
-    transform: scale(1.05);
-    opacity: 0.5;
+    transform: scale(1.1);
+    opacity: 0.2;
   }
 }

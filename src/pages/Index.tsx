@@ -90,17 +90,39 @@ const Index = () => {
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
               A story of hope, resilience, and the beautiful game
             </p>
-            <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={heroInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              className="btn-primary mt-8 text-lg px-12 py-4"
-              onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
-            >
-              Support the Film
-            </motion.button>
+            <motion.div className="flex flex-col items-center space-y-6">
+              <motion.button
+                initial={{ opacity: 0, y: 20 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 1.2 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="btn-primary mt-8 text-lg px-12 py-4"
+                onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+              >
+                Support the Film
+              </motion.button>
+
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 1.4 }}
+                className="flex space-x-6 mt-6"
+              >
+                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                  <Facebook size={24} />
+                </a>
+                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                  <Twitter size={24} />
+                </a>
+                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                  <Instagram size={24} />
+                </a>
+                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
+                  <Youtube size={24} />
+                </a>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
       </section>
