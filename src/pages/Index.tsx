@@ -107,20 +107,13 @@ const Index = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={heroInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 1.4 }}
-                className="flex space-x-6 mt-6"
+                className="flex items-center justify-center space-x-4 mt-6"
               >
-                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
-                  <Facebook size={24} />
-                </a>
-                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
-                  <Twitter size={24} />
-                </a>
-                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
-                  <Instagram size={24} />
-                </a>
-                <a href="#" className="text-white/80 hover:text-white transition-colors transform hover:scale-110 duration-200">
-                  <Youtube size={24} />
-                </a>
+                <img 
+                  src="/lovable-uploads/34f1e57d-af57-4edb-a78d-a8fa7a8b22ae.png" 
+                  alt="Payment methods accepted: Mastercard, Visa, Google Pay, Apple Pay"
+                  className="h-8 object-contain"
+                />
               </motion.div>
             </motion.div>
           </motion.div>
