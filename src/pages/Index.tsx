@@ -379,6 +379,11 @@ const Index = () => {
                 alt="Payment methods: Mastercard, Visa, Google Pay, Apple Pay"
                 className="max-h-12 object-contain"
               />
+              <img 
+                src="/lovable-uploads/bc68834e-d708-47c0-bab5-f80bec59bd27.png"
+                alt="Powered by Stripe"
+                className="h-8 object-contain"
+              />
             </div>
           </div>
         </div>
