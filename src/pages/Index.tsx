@@ -414,7 +414,7 @@ const Index = () => {
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-lg">About the Film</h3>
               <p className="text-sm leading-relaxed">
-                Rinascita Refugees tells the inspiring story of hope and resilience 
+                What We Have Left tells the inspiring story of hope and resilience 
                 through football. Join us in bringing this remarkable documentary to screens worldwide.
               </p>
             </div>
@@ -449,8 +449,8 @@ const Index = () => {
               <h3 className="text-white font-semibold text-lg">Contact</h3>
               <ul className="space-y-2">
                 <li className="text-sm">
-                  <a href="mailto:info@rinascitafilm.com" className="hover:text-white transition-colors">
-                    info@rinascitafilm.com
+                  <a href="mailto:info@whatwehaveleftfilm.com" className="hover:text-white transition-colors">
+                    info@whatwehaveleftfilm.com
                   </a>
                 </li>
                 <li className="text-sm">
@@ -481,7 +481,7 @@ const Index = () => {
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm">
-                © {new Date().getFullYear()} Rinascita Documentary. All rights reserved.
+                © {new Date().getFullYear()} What We Have Left. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <a href="#" className="text-sm hover:text-white transition-colors">
