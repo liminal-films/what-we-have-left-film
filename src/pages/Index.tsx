@@ -76,7 +76,6 @@ const Index = () => {
   ];
 
   useEffect(() => {
-    // Check for success/canceled URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success')) {
       toast({
@@ -84,7 +83,6 @@ const Index = () => {
         description: "Your support means the world to us.",
         className: "bg-white text-black border border-gray-200",
       });
-      // Clean URL
       window.history.replaceState({}, document.title, window.location.pathname);
     } else if (urlParams.get('canceled')) {
       toast({
@@ -93,7 +91,6 @@ const Index = () => {
         variant: "destructive",
         className: "bg-white text-black border border-gray-200",
       });
-      // Clean URL
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }, [toast]);
@@ -114,7 +111,6 @@ const Index = () => {
 
       if (error) throw error;
 
-      // Redirect to Stripe Checkout
       if (data.sessionUrl) {
         window.location.href = data.sessionUrl;
       }
@@ -167,8 +163,8 @@ const Index = () => {
               DOCUMENTARY FILM
             </h2>
             <h1 className="text-white text-5xl md:text-8xl font-bold tracking-wider leading-none">
-              RINASCITA
-              <span className="text-4xl md:text-7xl block mt-2">REFUGEES</span>
+              WHAT WE HAVE LEFT
+              <span className="text-4xl md:text-7xl block mt-2">THE RINASCITA REFUGEES</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
               A story of hope, resilience, and the beautiful game
