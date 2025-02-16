@@ -415,7 +415,11 @@ const Index = () => {
               <h3 className="text-white font-semibold text-lg">About the Film</h3>
               <p className="text-sm leading-relaxed">
                 What We Have Left tells the inspiring story of hope and resilience 
-                through football. Join us in bringing this remarkable documentary to screens worldwide.
+                through {
+                  /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) 
+                  ? "soccer" 
+                  : "football"
+                }. Join us in bringing this remarkable documentary to screens worldwide.
               </p>
             </div>
 
