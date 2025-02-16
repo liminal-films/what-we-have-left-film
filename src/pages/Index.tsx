@@ -50,8 +50,8 @@ const Index = () => {
 
   const partners = [
     {
-      name: "Virtual",
-      logo: "/lovable-uploads/455dadc0-1a69-4fe8-9df8-dc3709e93d74.png",
+      name: "Liminal Films",
+      logo: "/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png",
     },
     {
       name: "Liverpool FC",
