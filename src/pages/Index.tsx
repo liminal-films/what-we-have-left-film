@@ -276,7 +276,7 @@ const Index = () => {
                   }}
                   className={`flex items-center justify-center p-4 ${
                     partner.name === "Liminal Films" 
-                      ? "w-[43.2px] h-[32.4px] sm:w-[43.2px] sm:h-[32.4px]" 
+                      ? "w-[58px] h-[44px] sm:w-[58px] sm:h-[44px]" 
                       : "w-32 h-24"
                   }`}
                 >
@@ -284,7 +284,7 @@ const Index = () => {
                     src={partner.logo}
                     alt={partner.name}
                     className={`object-contain filter grayscale hover:grayscale-0 transition-all duration-300 ${
-                      partner.name === "Liminal Films" ? "max-h-[27px] sm:max-h-[27px]" : "max-h-20"
+                      partner.name === "Liminal Films" ? "max-h-[36px] sm:max-h-[36px]" : "max-h-20"
                     }`}
                   />
                 </motion.div>
