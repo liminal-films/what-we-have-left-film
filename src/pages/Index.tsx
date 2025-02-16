@@ -206,13 +206,20 @@ const Index = () => {
               <p className="text-lg leading-relaxed">
                 In Carmiano, southern Italy, a remarkable team of young asylum seekers 
                 has emerged. The Rinascita Refugees, composed of players from Guinea, 
-                Senegal, Gambia, Nigeria, and Mali, represents more than just a football 
-                team – it's a symbol of hope and resilience.
+                Senegal, Gambia, Nigeria, and Mali, represents more than just a {
+                  /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) 
+                  ? "soccer" 
+                  : "football"
+                } team – it's a symbol of hope and resilience.
               </p>
               <p className="text-lg leading-relaxed">
                 This feature-length documentary, created by Academy Award-winning 
                 professionals, tells their extraordinary journey from West Africa 
-                to becoming one of Puglia's top football teams.
+                to becoming one of Puglia's top {
+                  /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) 
+                  ? "soccer" 
+                  : "football"
+                } teams.
               </p>
               <div className="mt-8">
                 <img
@@ -235,7 +242,11 @@ const Index = () => {
               </div>
               <div className="bg-black/5 p-6 rounded-lg">
                 <p className="text-lg leading-relaxed">
-                  Through football, these young men have found not just a team, but a family. 
+                  Through {
+                    /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) 
+                    ? "soccer" 
+                    : "football"
+                  }, these young men have found not just a team, but a family. 
                   Their story is one of perseverance, unity, and the transformative power of sport.
                 </p>
               </div>
