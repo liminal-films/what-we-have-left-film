@@ -274,12 +274,18 @@ const Index = () => {
                     duration: 0.5,
                     delay: index * 0.1,
                   }}
-                  className="w-32 h-24 flex items-center justify-center p-4"
+                  className={`flex items-center justify-center p-4 ${
+                    partner.name === "Liminal Films" 
+                      ? "w-[43.2px] h-[32.4px] sm:w-[43.2px] sm:h-[32.4px]" 
+                      : "w-32 h-24"
+                  }`}
                 >
                   <img
                     src={partner.logo}
                     alt={partner.name}
-                    className="max-h-20 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+                    className={`object-contain filter grayscale hover:grayscale-0 transition-all duration-300 ${
+                      partner.name === "Liminal Films" ? "max-h-[27px] sm:max-h-[27px]" : "max-h-20"
+                    }`}
                   />
                 </motion.div>
               ))}
