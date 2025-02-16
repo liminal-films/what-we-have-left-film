@@ -276,7 +276,7 @@ const Index = () => {
                   }}
                   className={`flex items-center justify-center p-4 ${
                     partner.name === "Liminal Films" 
-                      ? "w-32 h-24"
+                      ? "w-32 h-24 scale-130"
                       : "w-32 h-24"
                   }`}
                 >
