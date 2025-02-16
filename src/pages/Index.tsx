@@ -167,7 +167,11 @@ const Index = () => {
               <span className="text-3xl md:text-7xl block mt-2">THE RINASCITA REFUGEES</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-              A story of hope, resilience, and the beautiful game
+              A story of hope, resilience, and the universal language of {
+                /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) 
+                ? "soccer" 
+                : "football"
+              }
             </p>
             <motion.div className="flex flex-col items-center space-y-6">
               <motion.button
