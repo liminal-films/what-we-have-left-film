@@ -164,7 +164,7 @@ const Index = () => {
             </h2>
             <h1 className="text-white text-5xl md:text-8xl font-bold tracking-wider leading-none">
               WHAT WE HAVE LEFT
-              <span className="text-4xl md:text-7xl block mt-2">THE RINASCITA REFUGEES</span>
+              <span className="text-3xl md:text-7xl block mt-2">THE RINASCITA REFUGEES</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
               A story of hope, resilience, and the beautiful game
