@@ -153,12 +153,12 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center space-y-8"
           >
-            <h2 className="text-white text-xl md:text-2xl font-light tracking-[0.2em] uppercase mb-4">
+            <h2 className="text-white text-sm md:text-2xl font-light tracking-[0.2em] uppercase mb-4">
               A 
               <img 
                 src="/lovable-uploads/3562711b-2987-45af-a80d-e7cf4691da0c.png"
                 alt="Rinascita Refugees Logo" 
-                className="inline-block mx-2 h-10 md:h-14"
+                className="inline-block mx-2 h-6 md:h-14"
               />
               DOCUMENTARY FILM
             </h2>
