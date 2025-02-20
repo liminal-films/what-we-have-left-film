@@ -137,14 +137,14 @@ const Index = () => {
           duration: 0.8,
           delay: 0.8
         }} className="text-center space-y-8">
-            <h2 className="text-white text-sm md:text-2xl font-light tracking-[0.2em] uppercase mb-4">
+            <h2 className="text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
               A 
               <img src="/lovable-uploads/3562711b-2987-45af-a80d-e7cf4691da0c.png" alt="Rinascita Refugees Logo" className="inline-block mx-2 h-6 md:h-14" />
               DOCUMENTARY FILM
             </h2>
-            <h1 className="text-white text-5xl font-bold tracking-wider leading-none md:text-7xl">
+            <h1 className="text-white font-bold tracking-wider leading-none md:text-7xl text-4xl">
               WHAT WE HAVE LEFT
-              <span className="text-3xl block mt-2 md:text-5xl">THE RINASCITA REFUGEES</span>
+              <span className="block mt-2 md:text-5xl py-[3px] text-xl text-center my-[9px]">THE RINASCITA REFUGEES</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
               A story of hope, resilience, and the universal language of {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"}
