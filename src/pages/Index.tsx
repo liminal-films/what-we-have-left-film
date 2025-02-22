@@ -153,7 +153,7 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen">
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:lg:inset-[30px] after:bottom-[60px] md:after:bottom-[80px]">
           <h2 className="absolute top-10 w-full text-center z-10 text-white text-sm md:text-xl font-light tracking-[0.2em] uppercase mb-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
             A LIMINAL FILMS PRODUCTION
           </h2>
