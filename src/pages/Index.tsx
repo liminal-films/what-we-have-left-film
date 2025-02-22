@@ -4,16 +4,19 @@ import { useInView } from "react-intersection-observer";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
+
 const oneTimePriceIds = {
   25: 'price_1Qsf4IIoUqNIiEfRO16RNdB1',
   100: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL',
   250: 'price_1Qsf4IIoUqNIiEfRylxI49Rq'
 };
+
 const recurringPriceIds = {
   25: 'price_1QsfYVIoUqNIiEfRdyxxD5W3',
   100: 'price_1QsfYVIoUqNIiEfRScITTLRj',
   250: 'price_1QsfYVIoUqNIiEfRoR2oF9N7'
 };
+
 const Index = () => {
   const {
     toast
@@ -36,12 +39,14 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
+
   const partners = [{
     name: "Liminal Films",
     logo: "/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png"
@@ -61,6 +66,7 @@ const Index = () => {
     name: "Adobo",
     logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png"
   }];
+
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success')) {
@@ -80,6 +86,7 @@ const Index = () => {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }, [toast]);
+
   const handleDonation = async (amount: number, priceId: string) => {
     try {
       setIsProcessing(true);
@@ -111,6 +118,7 @@ const Index = () => {
       setIsProcessing(false);
     }
   };
+
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen p-8">
         <div className="absolute inset-8 border-[3px] border-white/30 z-10" />
@@ -139,12 +147,15 @@ const Index = () => {
         }} className="text-center space-y-8">
             <h2 className="text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
               A 
-              <img src="/lovable-uploads/3562711b-2987-45af-a80d-e7cf4691da0c.png" alt="Rinascita Refugees Logo" className="inline-block mx-2 h-6 md:h-14" />
-              DOCUMENTARY FILM
+              <img src="/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png" alt="Liminal Films Logo" className="inline-block mx-2 h-6 md:h-14" />
+              LIMINAL FILMS PRODUCTION
             </h2>
-            <h1 className="text-white font-bold tracking-wider leading-none md:text-7xl text-4xl">
-              WHAT WE HAVE LEFT
-              <span className="block mt-2 md:text-5xl py-[3px] text-xl text-center my-[9px]">THE RINASCITA REFUGEES</span>
+            <h1 className="text-white font-bold tracking-wider leading-none md:text-7xl text-4xl space-y-2">
+              <span className="block">WHAT</span>
+              <span className="block">WE</span>
+              <span className="block">HAVE</span>
+              <span className="block mt-4 md:text-5xl text-xl text-center">LEFT</span>
+              <span className="block mt-2 md:text-5xl text-xl text-center">THE RINASCITA REFUGEES</span>
             </h1>
             <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
               A story of hope, resilience, and the universal language of {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"}
@@ -406,4 +417,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
