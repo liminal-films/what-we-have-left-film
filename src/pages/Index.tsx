@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -129,7 +130,7 @@ const Index = () => {
       } : {}} transition={{
         duration: 1.5
       }} className="absolute inset-0">
-          <img src="/lovable-uploads/82910922-8c4a-4d34-a459-6bb1dffe8328.png" alt="Player with medal" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" alt="Player with medal in room" className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
         
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
