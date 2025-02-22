@@ -31,6 +31,10 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+  const [trailerRef, trailerInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
   const [storyRef, storyInView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -119,6 +123,11 @@ const Index = () => {
     }
   };
 
+  const scrollToTrailer = () => {
+    const trailerSection = document.getElementById('trailer-section');
+    trailerSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20">
@@ -156,10 +165,36 @@ const Index = () => {
                 <p className="text-white/90 text-lg md:text-xl mt-8 font-light pb-8">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
+                <button 
+                  onClick={scrollToTrailer}
+                  className="btn-primary"
+                >
+                  View the Trailer
+                </button>
               </div>
             </motion.div>
           </div>
         </div>
+      </section>
+
+      <section id="trailer-section" ref={trailerRef} className="bg-black section-padding">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={trailerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+          className="max-w-5xl mx-auto"
+        >
+          <div style={{ padding: "52.92% 0 0 0", position: "relative" }}>
+            <iframe 
+              src="https://player.vimeo.com/video/1059255107?h=5481b81c49&badge=0&autopause=0&player_id=0&app_id=58479" 
+              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              title="What We Have Left - Sizzle v2"
+            />
+          </div>
+          <script src="https://player.vimeo.com/api/player.js" async></script>
+        </motion.div>
       </section>
 
       <section ref={storyRef} className="section-padding bg-warm-gray">
