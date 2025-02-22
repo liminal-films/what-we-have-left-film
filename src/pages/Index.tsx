@@ -129,7 +129,7 @@ const Index = () => {
       } : {}} transition={{
         duration: 1.5
       }} className="absolute inset-0">
-          <img src="/lovable-uploads/45693f03-91dd-4146-940e-66c8d8d45230.png" alt="Team celebration" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/lovable-uploads/82910922-8c4a-4d34-a459-6bb1dffe8328.png" alt="Player with medal" className="absolute inset-0 w-full h-full object-cover" />
         </motion.div>
         
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
@@ -146,20 +146,19 @@ const Index = () => {
           delay: 0.8
         }} className="text-center space-y-8">
             <h2 className="text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
-              A 
-              <img src="/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png" alt="Liminal Films Logo" className="inline-block mx-2 h-6 md:h-14" />
-              LIMINAL FILMS PRODUCTION
+              A LIMINAL FILMS PRODUCTION
             </h2>
-            <h1 className="text-white font-bold tracking-wider leading-none md:text-7xl text-4xl space-y-2">
-              <span className="block">WHAT</span>
-              <span className="block">WE</span>
-              <span className="block">HAVE</span>
-              <span className="block mt-4 md:text-5xl text-xl text-center">LEFT</span>
-              <span className="block mt-2 md:text-5xl text-xl text-center">THE RINASCITA REFUGEES</span>
-            </h1>
-            <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-              A story of hope, resilience, and the universal language of {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"}
-            </p>
+            <div className="flex flex-col items-center">
+              <h1 className="text-[#EA384C] font-bold tracking-wider leading-none md:text-8xl text-5xl space-y-2">
+                <span className="block">WHAT</span>
+                <span className="block">WE</span>
+                <span className="block">HAVE</span>
+                <span className="block">LEFT</span>
+              </h1>
+              <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
+                Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
+              </p>
+            </div>
             <motion.div className="flex flex-col items-center space-y-6">
               <motion.button initial={{
               opacity: 0,
