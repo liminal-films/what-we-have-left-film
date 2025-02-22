@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -138,7 +139,7 @@ const Index = () => {
             initial={{ scale: 1.1 }} 
             animate={heroInView ? { scale: 1 } : {}} 
             transition={{ duration: 1.5 }}
-            className="relative h-[65vh] lg:h-screen"
+            className="relative h-[75vh] lg:h-screen"
           >
             <img 
               src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" 
@@ -184,16 +185,23 @@ const Index = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <div style={{ padding: "52.92% 0 0 0", position: "relative" }}>
-            <iframe 
-              src="https://player.vimeo.com/video/1059255107?h=5481b81c49&badge=0&autopause=0&player_id=0&app_id=58479" 
-              style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              title="What We Have Left - Sizzle v2"
-            />
+          <div className="relative">
+            <script src="https://fast.wistia.com/player.js" async></script>
+            <script src="https://fast.wistia.com/embed/u24yuqqkli.js" async type="module"></script>
+            <style>
+              {`wistia-player[media-id='u24yuqqkli']:not(:defined) { 
+                background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/u24yuqqkli/swatch'); 
+                display: block; 
+                filter: blur(5px); 
+                padding-top:52.92%; 
+              }`}
+            </style>
+            <wistia-player 
+              media-id="u24yuqqkli" 
+              wistia-popover="true" 
+              aspect="1.889763779527559"
+            ></wistia-player>
           </div>
-          <script src="https://player.vimeo.com/api/player.js" async></script>
         </motion.div>
       </section>
 
@@ -429,3 +437,4 @@ const Index = () => {
 };
 
 export default Index;
+
