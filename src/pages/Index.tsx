@@ -146,7 +146,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      <div className="bg-black pb-12">
+      <div className="bg-black section-padding pb-12">
         <div className="max-w-5xl mx-auto">
           <div className="mb-4 flex items-center gap-2 text-white/80 font-medium tracking-wide">
             <Link size={16} />
