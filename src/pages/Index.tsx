@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -69,7 +70,7 @@ const Index = () => {
               loading="eager" 
               fetchPriority="high" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent lg:hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent lg:hidden" />
           </motion.div>
 
           <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
@@ -266,3 +267,4 @@ const Index = () => {
 };
 
 export default Index;
+
