@@ -77,7 +77,7 @@ const Index = () => {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[275px] lg:mt-0 relative z-10 mb-16">
               <div className="relative w-full">
                 <h1 className="text-[#EA384C] font-antonio font-bold leading-[1] tracking-[-0.03em] flex flex-col items-start">
-                  <div className="flex gap-4 pl-0">
+                  <div className="flex gap-4 -ml-1">
                     <span className="block text-[3.64rem] sm:text-[4.55rem] lg:text-[5.46rem]">WHAT</span>
                     <span className="block text-[3.64rem] sm:text-[4.55rem] lg:text-[5.46rem]">WE</span>
                   </div>
