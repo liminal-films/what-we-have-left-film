@@ -298,8 +298,7 @@ const Index = () => {
               </div>
               <div className="bg-black/5 p-6 rounded-lg">
                 <p className="text-lg leading-relaxed">
-                  Through {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"}, these young men have found not just a team, but a family. 
-                  Their story is one of perseverance, unity, and the transformative power of sport.
+                  These young men have found not only a team, but a family. Their story is one of perseverance, unity, and the transformative power of sport.
                 </p>
               </div>
             </div>
