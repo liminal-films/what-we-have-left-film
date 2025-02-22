@@ -24,14 +24,14 @@
   }
   
   .btn-primary {
-    @apply px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
-           shadow-lg shadow-[#ea384c]/20
-           hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
+    @apply px-8 py-3 bg-black text-white rounded-full font-semibold 
+           shadow-lg shadow-black/20
+           hover:bg-black/90 hover:shadow-black/30
            transition-all duration-300 
            transform hover:scale-105
            relative
            after:absolute after:inset-[-4px]
-           after:rounded-full after:border-[3px] after:border-[#ea384c]/60
+           after:rounded-full after:border-[3px] after:border-black/60
            after:animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite];
   }
 }

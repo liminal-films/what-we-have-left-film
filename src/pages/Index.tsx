@@ -192,7 +192,7 @@ const Index = () => {
                   onClick={scrollToTrailer}
                   className="btn-primary mt-8"
                 >
-                  View the Trailer
+                  View Trailer
                 </button>
               </div>
             </motion.div>
