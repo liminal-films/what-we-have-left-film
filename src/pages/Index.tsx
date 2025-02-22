@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -169,7 +170,10 @@ const Index = () => {
               INVESTOR DECK
             </div>
             <div className="bg-black/20 p-8 rounded-2xl">
-              <a href="#" className="block w-fit">
+              <a href="https://www.canva.com/design/DAGfNpk33xw/S4Ot2WqfuU4Nizw3zYJ69w/view?utm_content=DAGfNpk33xw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h06dec372c8" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 className="block w-fit">
                 <Presentation size={48} className="text-white/80 hover:text-[#ea384c] transition-colors" />
               </a>
             </div>
