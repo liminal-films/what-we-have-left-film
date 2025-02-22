@@ -32,6 +32,9 @@ const Index = () => {
     threshold: 0.1
   });
 
+  const isUSTimeZone = /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  const sportTerm = (text: string) => isUSTimeZone ? text : text.replace(/soccer/i, match => match.charAt(0) === 'S' ? 'Football' : 'football');
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
@@ -84,7 +87,7 @@ const Index = () => {
                   className="w-full max-w-[500px] h-auto"
                 />
                 <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight ml-5 mb-5">
-                  Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
+                  Hope. Redemption. {sportTerm("Soccer")}.
                 </p>
                 <div className="absolute top-[calc(100%+0.5rem)] right-0">
                   <img 
@@ -176,7 +179,7 @@ const Index = () => {
               <h2 className="text-3xl md:text-4xl font-bold">About the Film</h2>
               <p className="text-lg leading-relaxed">
                 Nestled in the heart of Italy, a group of West Africans who have lost everything unite 
-                to create the Rinascita Refugees {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"} team. Their shared passion for the sport becomes a vehicle to combat prejudice, 
+                to create the Rinascita Refugees {sportTerm("soccer")} team. Their shared passion for the sport becomes a vehicle to combat prejudice, 
                 rebuild their lives, and discover hope and community in an unfamiliar land.
               </p>
               <p className="text-lg leading-relaxed">
