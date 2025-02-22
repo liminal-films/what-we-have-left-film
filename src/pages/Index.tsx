@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -227,6 +226,32 @@ const Index = () => {
           </div>
         </motion.div>
       </section>
+
+      <div className="bg-[#1A1F2C] pb-12">
+        <div className="max-w-5xl mx-auto">
+          <a 
+            href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="block relative overflow-hidden group"
+          >
+            <img 
+              src="/lovable-uploads/245feedd-f8c5-461d-8d5f-c6422ca172bb.png" 
+              alt="Players training" 
+              className="w-full h-[400px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-8">
+              <div className="text-gray-300 font-medium mb-2">CNN.COM</div>
+              <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#ea384c] transition-colors">
+                This all-migrant soccer team is chasing a dream together
+              </h2>
+              <p className="text-gray-300 text-lg">
+                Deep in the eighth tier of the Italian soccer league, far removed from the star-studded ranks of AC Milan and Juventus, there is an amateur team made up entirely of migrants.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
 
       <section ref={storyRef} className="section-padding bg-warm-gray">
         <div className="max-w-7xl mx-auto">
@@ -460,4 +485,3 @@ const Index = () => {
 };
 
 export default Index;
-
