@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -19,9 +18,7 @@ const recurringPriceIds = {
 };
 
 const Index = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
@@ -189,12 +186,6 @@ const Index = () => {
                 <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
-                <button 
-                  onClick={scrollToTrailer}
-                  className="btn-primary mt-8"
-                >
-                  View the Trailer
-                </button>
               </div>
             </motion.div>
           </div>
@@ -208,6 +199,7 @@ const Index = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
+          <h2 className="text-white text-3xl md:text-4xl font-bold text-center mb-8">View the Trailer</h2>
           <div className="relative">
             <style>
               {`
@@ -460,4 +452,3 @@ const Index = () => {
 };
 
 export default Index;
-
