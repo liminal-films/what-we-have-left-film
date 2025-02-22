@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -60,10 +59,10 @@ const Index = () => {
   }, []);
 
   const scrollToTrailer = () => {
-    const trailerSection = document.getElementById('trailer-section');
-    trailerSection?.scrollIntoView({
-      behavior: 'smooth'
-    });
+    const trailerSection = document.getElementById('trailer');
+    if (trailerSection) {
+      trailerSection.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return <div className="overflow-x-hidden">
@@ -114,7 +113,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section ref={trailerRef} className="bg-black section-padding">
+      <section id="trailer" ref={trailerRef} className="bg-black section-padding">
         <motion.div initial={{
         opacity: 0,
         y: 30
@@ -289,4 +288,3 @@ const Index = () => {
 };
 
 export default Index;
-
