@@ -92,7 +92,7 @@ const Index = () => {
                 <p className="text-black text-lg sm:text-xl mt-8 font-light">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
-                <button onClick={scrollToTrailer} className="btn-primary mt-8 inline-flex items-center gap-2 bg-white text-black border-[3px] border-black/20 hover:bg-black/5">
+                <button onClick={scrollToTrailer} className="btn-primary mt-8 inline-flex items-center gap-2 bg-white text-black hover:bg-black/5">
                   <Play size={20} />
                   View Trailer
                 </button>
