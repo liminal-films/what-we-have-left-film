@@ -294,7 +294,7 @@ const Index = () => {
             </div>
             <div className="space-y-8">
               <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
-                <img src="/lovable-uploads/8074a65f-87a5-436a-af92-a0957fca2845.png" alt="Team member in red jersey" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/87302c11-6fd1-49fc-b670-9797aed4ff52.png" alt="Team member in red Refugees jersey against fence" className="w-full h-full object-cover" />
               </div>
               <div className="bg-black/5 p-6 rounded-lg">
                 <p className="text-lg leading-relaxed">
@@ -475,7 +475,7 @@ const Index = () => {
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm">
-                © {new Date().getFullYear()} What We Have Left. All rights reserved.
+                �� {new Date().getFullYear()} What We Have Left. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <a href="#" className="text-sm hover:text-white transition-colors">
