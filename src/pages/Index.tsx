@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -240,7 +239,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/245feedd-f8c5-461d-8d5f-c6422ca172bb.png" 
               alt="Players training" 
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[400px] object-cover object-top"
             />
             <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-8">
               <div className="text-gray-300 font-medium mb-2">CNN.COM</div>
