@@ -33,7 +33,7 @@
            relative
            after:absolute after:inset-[-4px]
            after:rounded-full after:border-[3px] after:border-[#ea384c]/60
-           after:animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite];
+           after:animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite];
   }
 }
 
@@ -60,10 +60,11 @@
 @keyframes pulse {
   0%, 100% {
     transform: scale(1);
-    opacity: 0.8;
+    opacity: 0.6;
   }
   50% {
-    transform: scale(1.1);
+    transform: scale(1.05);
     opacity: 0.2;
   }
 }
+
