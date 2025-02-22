@@ -237,15 +237,7 @@ const Index = () => {
 
       <footer className="bg-[#1A1F2C] text-white/80">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">About the Film</h3>
-              <p className="text-sm leading-relaxed">
-                What We Have Left tells the inspiring story of hope and resilience 
-                through {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"}. Join us in bringing this remarkable documentary to screens worldwide.
-              </p>
-            </div>
-
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-lg">Quick Links</h3>
               <ul className="space-y-2">
@@ -306,18 +298,10 @@ const Index = () => {
           </div>
 
           <div className="mt-12 pt-8 border-t border-white/10">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex justify-center">
               <p className="text-sm">
                 © {new Date().getFullYear()} What We Have Left. All rights reserved.
               </p>
-              <div className="flex space-x-6">
-                <a href="#" className="text-sm hover:text-white transition-colors">
-                  Privacy Policy
-                </a>
-                <a href="#" className="text-sm hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-              </div>
             </div>
           </div>
         </div>
