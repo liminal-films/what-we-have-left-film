@@ -65,7 +65,7 @@ const Index = () => {
             <img 
               src="/lovable-uploads/147d4822-5b81-4b2a-98bf-0065e44389b3.png" 
               alt="Person in Rinascita Refugees jersey standing in front of a goal" 
-              className="absolute inset-0 w-full h-full object-cover lg:object-center object-[center_top]" 
+              className="absolute inset-0 w-full h-full object-cover lg:object-center object-[center_-100px]" 
               loading="eager" 
               fetchPriority="high" 
             />
