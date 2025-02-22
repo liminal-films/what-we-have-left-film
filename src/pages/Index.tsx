@@ -76,11 +76,11 @@ const Index = () => {
           <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[275px] lg:mt-0 relative z-10 mb-16">
               <div className="relative w-full">
-                <h1 className="text-[#EA384C] font-bold tracking-[-0.02em] leading-[0.75] inline-flex flex-col items-start">
+                <h1 className="text-[#EA384C] font-antonio font-bold leading-[1] tracking-[-0.03em] inline-flex flex-col items-start">
                   <span className="block text-4xl sm:text-5xl lg:text-6xl">WHAT</span>
-                  <span className="block text-5xl sm:text-6xl lg:text-7xl mt-[-0.2em]">WE</span>
-                  <span className="block text-6xl sm:text-7xl lg:text-8xl mt-[-0.2em]">HAVE</span>
-                  <span className="block text-7xl sm:text-8xl lg:text-9xl mt-[-0.2em]">LEFT</span>
+                  <span className="block text-5xl sm:text-6xl lg:text-7xl mt-[-0.1em]">WE</span>
+                  <span className="block text-6xl sm:text-7xl lg:text-8xl mt-[-0.1em]">HAVE</span>
+                  <span className="block text-7xl sm:text-8xl lg:text-9xl mt-[-0.1em]">LEFT</span>
                 </h1>
                 <p className="text-black text-lg sm:text-xl mt-12 font-bold tracking-tight">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
