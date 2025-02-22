@@ -177,7 +177,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-left space-y-8 max-w-xl -mt-20 md:mt-0 lg:mt-20 relative z-10 mb-16 md:mb-0"
+              className="text-left space-y-8 max-w-xl -mt-20 md:mt-0 lg:mt-20 relative z-10 mb-16"
             >
               <div>
                 <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
@@ -486,3 +486,4 @@ const Index = () => {
 };
 
 export default Index;
+
