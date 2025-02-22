@@ -78,8 +78,8 @@ const Index = () => {
               <div className="relative w-full">
                 <h1 className="text-[#EA384C] font-antonio font-bold leading-[1] tracking-[-0.03em] inline-flex flex-col items-start">
                   <div className="flex gap-4">
-                    <span className="block text-[5.2rem] sm:text-[6.5rem] lg:text-[7.8rem]">WHAT</span>
-                    <span className="block text-[5.2rem] sm:text-[6.5rem] lg:text-[7.8rem]">WE</span>
+                    <span className="block text-[3.64rem] sm:text-[4.55rem] lg:text-[5.46rem]">WHAT</span>
+                    <span className="block text-[3.64rem] sm:text-[4.55rem] lg:text-[5.46rem]">WE</span>
                   </div>
                   <span className="block text-[7.8rem] sm:text-[9.1rem] lg:text-[10.4rem] mt-[-0.1em]">HAVE</span>
                   <span className="block text-[9.1rem] sm:text-[10.4rem] lg:text-[11.7rem] mt-[-0.1em]">LEFT</span>
