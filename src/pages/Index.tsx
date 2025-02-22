@@ -93,7 +93,7 @@ const Index = () => {
           } : {}} transition={{
             duration: 0.8,
             delay: 0.8
-          }} className="text-left w-full flex justify-center lg:justify-start space-y-8 max-w-xl -mt-20 lg:mt-20 relative z-10 mb-16">
+          }} className="text-left w-full flex justify-center lg:justify-start space-y-8 max-w-xl -mt-[175px] lg:mt-20 relative z-10 mb-16">
               <div>
                 <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
                   <span className="block text-5xl sm:text-6xl">WHAT</span>
