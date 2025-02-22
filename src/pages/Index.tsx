@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -74,7 +75,7 @@ const Index = () => {
 
           <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[275px] lg:mt-0 relative z-10 mb-16">
-              <div className="relative w-full">
+              <div className="relative w-full -ml-[15px]">
                 <h1 className="text-[#EA384C] font-antonio font-bold leading-[1] tracking-[-0.03em] flex flex-col items-start">
                   <div className="flex gap-4 -ml-1">
                     <span className="block text-[3.28rem] sm:text-[4.1rem] lg:text-[4.91rem]">WHAT</span>
