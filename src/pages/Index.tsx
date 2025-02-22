@@ -120,69 +120,62 @@ const Index = () => {
   };
 
   return <div className="overflow-x-hidden">
-      <section ref={heroRef} className="relative min-h-screen p-8">
-        <div className="absolute inset-8 border-[3px] border-white/30 z-10" />
-        <motion.div initial={{
-        scale: 1.1
-      }} animate={heroInView ? {
-        scale: 1
-      } : {}} transition={{
-        duration: 1.5
-      }} className="absolute inset-0">
-          <img src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" alt="Player with medal in room" className="absolute inset-0 w-full h-full object-cover" />
-        </motion.div>
-        
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/40" />
-        
-        <div className="relative h-screen flex flex-col items-center justify-center px-4 z-20">
-          <motion.div initial={{
-          opacity: 0,
-          y: 30
-        }} animate={heroInView ? {
-          opacity: 1,
-          y: 0
-        } : {}} transition={{
-          duration: 0.8,
-          delay: 0.8
-        }} className="text-center space-y-8">
-            <h2 className="text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
-              A LIMINAL FILMS PRODUCTION
-            </h2>
-            <div className="flex flex-col items-center">
-              <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
-                <span className="block text-5xl md:text-6xl">WHAT</span>
-                <span className="block text-6xl md:text-7xl">WE</span>
-                <span className="block text-7xl md:text-8xl">HAVE</span>
-                <span className="block text-8xl md:text-9xl">LEFT</span>
-              </h1>
-              <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
-                Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
-              </p>
-            </div>
-            <motion.div className="flex flex-col items-center space-y-6">
-              <motion.button initial={{
-              opacity: 0,
-              y: 20
-            }} animate={heroInView ? {
-              opacity: 1,
-              y: 0
-            } : {}} transition={{
-              duration: 0.8,
-              delay: 1.2
-            }} whileHover={{
-              scale: 1.05
-            }} whileTap={{
-              scale: 0.98
-            }} className="btn-primary mt-8 text-lg px-12 py-4 relative z-30" onClick={() => {
-              const supportSection = document.getElementById('support-section');
-              supportSection?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }}>
-                Support the Film
-              </motion.button>
-            </motion.div>
+      <section ref={heroRef} className="relative min-h-screen">
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+          <motion.div 
+            initial={{ scale: 1.1 }} 
+            animate={heroInView ? { scale: 1 } : {}} 
+            transition={{ duration: 1.5 }}
+            className="relative h-[50vh] lg:h-screen"
+          >
+            <img 
+              src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" 
+              alt="Player with medal in room" 
+              className="absolute inset-0 w-full h-full object-cover" 
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent lg:hidden" />
           </motion.div>
+
+          <div className="relative bg-black min-h-[50vh] lg:min-h-screen flex items-center justify-center px-8 lg:px-12">
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={heroInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="text-left space-y-8 max-w-xl"
+            >
+              <h2 className="text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
+                A LIMINAL FILMS PRODUCTION
+              </h2>
+              <div>
+                <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
+                  <span className="block text-5xl md:text-6xl">WHAT</span>
+                  <span className="block text-6xl md:text-7xl">WE</span>
+                  <span className="block text-7xl md:text-8xl">HAVE</span>
+                  <span className="block text-8xl md:text-9xl">LEFT</span>
+                </h1>
+                <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
+                  Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
+                </p>
+              </div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={heroInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                <button
+                  className="btn-primary mt-8 text-lg px-12 py-4"
+                  onClick={() => {
+                    const supportSection = document.getElementById('support-section');
+                    supportSection?.scrollIntoView({
+                      behavior: 'smooth'
+                    });
+                  }}
+                >
+                  Support the Film
+                </button>
+              </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
