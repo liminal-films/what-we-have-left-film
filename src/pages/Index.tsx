@@ -242,7 +242,7 @@ const Index = () => {
 
       <footer className="bg-[#1A1F2C] text-white/80">
         <div className="max-w-7xl mx-auto px-6 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-lg">Follow Us</h3>
               <div className="flex space-x-4">
@@ -279,32 +279,6 @@ const Index = () => {
                   <Twitter size={20} />
                 </a>
               </div>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">Quick Links</h3>
-              <ul className="space-y-2">
-                <li>
-                  <a href="#trailer-section" className="text-sm hover:text-white transition-colors">
-                    View Trailer
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">
-                    CNN Article
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm hover:text-white transition-colors">
-                    Investor Deck
-                  </a>
-                </li>
-                <li>
-                  <a href="#story-section" className="text-sm hover:text-white transition-colors">
-                    About the Film
-                  </a>
-                </li>
-              </ul>
             </div>
 
             <div className="space-y-4">
