@@ -148,7 +148,7 @@ const Index = () => {
         </motion.div>
       </section>
 
-      <div className="bg-[#1A1F2C] pb-12">
+      <div className="bg-black pb-12">
         <div className="max-w-5xl mx-auto">
           <a 
             href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" 
