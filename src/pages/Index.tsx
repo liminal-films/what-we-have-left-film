@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -158,23 +157,6 @@ const Index = () => {
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
               </div>
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={heroInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                <button
-                  className="btn-primary mt-8 text-lg px-12 py-4"
-                  onClick={() => {
-                    const supportSection = document.getElementById('support-section');
-                    supportSection?.scrollIntoView({
-                      behavior: 'smooth'
-                    });
-                  }}
-                >
-                  Support the Film
-                </button>
-              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -412,4 +394,3 @@ const Index = () => {
 };
 
 export default Index;
-
