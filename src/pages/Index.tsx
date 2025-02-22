@@ -81,7 +81,7 @@ const Index = () => {
                     <span className="block text-[3.64rem] sm:text-[4.55rem] lg:text-[5.46rem]">WHAT</span>
                     <span className="block text-[3.64rem] sm:text-[4.55rem] lg:text-[5.46rem]">WE</span>
                   </div>
-                  <span className="block text-[7.02rem] sm:text-[8.19rem] lg:text-[9.36rem] mt-[-0.1em]">HAVE</span>
+                  <span className="block text-[7.09rem] sm:text-[8.27rem] lg:text-[9.45rem] mt-[-0.1em] py-[3px]">HAVE</span>
                   <span className="block text-[9.1rem] sm:text-[10.4rem] lg:text-[11.7rem] mt-[-0.1em]">LEFT</span>
                 </h1>
                 <p className="text-black text-lg sm:text-xl mt-12 font-bold tracking-tight">
