@@ -4,16 +4,19 @@ import { useInView } from "react-intersection-observer";
 import { Facebook, Twitter, Instagram, Youtube, Play, Link, Video, Presentation } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
+
 const oneTimePriceIds = {
   25: 'price_1Qsf4IIoUqNIiEfRO16RNdB1',
   100: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL',
   250: 'price_1Qsf4IIoUqNIiEfRylxI49Rq'
 };
+
 const recurringPriceIds = {
   25: 'price_1QsfYVIoUqNIiEfRdyxxD5W3',
   100: 'price_1QsfYVIoUqNIiEfRScITTLRj',
   250: 'price_1QsfYVIoUqNIiEfRoR2oF9N7'
 };
+
 const Index = () => {
   const {
     toast
@@ -30,12 +33,14 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
+
   useEffect(() => {
     const loadWistiaScripts = async () => {
       const playerScript = document.createElement('script');
@@ -54,12 +59,14 @@ const Index = () => {
       scripts.forEach(script => script.remove());
     };
   }, []);
+
   const scrollToTrailer = () => {
     const trailerSection = document.getElementById('trailer-section');
     trailerSection?.scrollIntoView({
       behavior: 'smooth'
     });
   };
+
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-black">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:z-0">
@@ -254,8 +261,10 @@ const Index = () => {
               <h3 className="text-white font-semibold text-lg">Contact</h3>
               <ul className="space-y-2">
                 <li className="text-sm">
-                  <a href="mailto:info@whatwehaveleftfilm.com" className="hover:text-white transition-colors">zachbaliva@gmail.com
-                </a>
+                  <a href="mailto:zachbaliva@gmail.com" className="hover:text-white transition-colors">zachbaliva@gmail.com</a>
+                </li>
+                <li className="text-sm">
+                  <a href="tel:217-607-3276" className="hover:text-white transition-colors">217-607-3276</a>
                 </li>
               </ul>
             </div>
@@ -272,4 +281,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
