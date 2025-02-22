@@ -4,21 +4,20 @@ import { useInView } from "react-intersection-observer";
 import { Facebook, Twitter, Instagram, Youtube, Play, Link, Video, Presentation } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
-
 const oneTimePriceIds = {
   25: 'price_1Qsf4IIoUqNIiEfRO16RNdB1',
   100: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL',
   250: 'price_1Qsf4IIoUqNIiEfRylxI49Rq'
 };
-
 const recurringPriceIds = {
   25: 'price_1QsfYVIoUqNIiEfRdyxxD5W3',
   100: 'price_1QsfYVIoUqNIiEfRScITTLRj',
   250: 'price_1QsfYVIoUqNIiEfRoR2oF9N7'
 };
-
 const Index = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -31,14 +30,12 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
-
   useEffect(() => {
     const loadWistiaScripts = async () => {
       const playerScript = document.createElement('script');
@@ -57,14 +54,14 @@ const Index = () => {
       scripts.forEach(script => script.remove());
     };
   }, []);
-
   const scrollToTrailer = () => {
     const trailerSection = document.getElementById('trailer');
     if (trailerSection) {
-      trailerSection.scrollIntoView({ behavior: 'smooth' });
+      trailerSection.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-black">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:z-0">
@@ -146,18 +143,13 @@ const Index = () => {
             <Link size={16} />
             CNN.COM ARTICLE
           </div>
-          <a href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             className="block relative overflow-hidden group rounded-2xl">
-            <img src="/lovable-uploads/894fa30b-0804-4df5-b06e-d5a6c0d0c3d8.png" 
-                 alt="Players training" 
-                 className="w-full h-[400px] object-cover" />
+          <a href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden group rounded-2xl">
+            <img src="/lovable-uploads/894fa30b-0804-4df5-b06e-d5a6c0d0c3d8.png" alt="Players training" className="w-full h-[400px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60 flex flex-col justify-end p-8">
-              <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#ea384c] transition-colors">
+              <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#ea384c] transition-colors py-0 px-0 mx-0 my-[8px]">
                 This all-migrant soccer team is chasing a dream together
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
+              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl py-[2px] my-0">
                 Deep in the eighth tier of the Italian soccer league, far removed from the star-studded ranks of AC Milan and Juventus, there is an amateur team made up entirely of migrants.
               </p>
             </div>
@@ -169,10 +161,7 @@ const Index = () => {
               INVESTOR DECK
             </div>
             <div className="bg-black/20 p-8 rounded-2xl">
-              <a href="https://www.canva.com/design/DAGfNpk33xw/S4Ot2WqfuU4Nizw3zYJ69w/view?utm_content=DAGfNpk33xw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h06dec372c8" 
-                 target="_blank" 
-                 rel="noopener noreferrer"
-                 className="block w-fit">
+              <a href="https://www.canva.com/design/DAGfNpk33xw/S4Ot2WqfuU4Nizw3zYJ69w/view?utm_content=DAGfNpk33xw&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h06dec372c8" target="_blank" rel="noopener noreferrer" className="block w-fit">
                 <Presentation size={48} className="text-white/80 hover:text-[#ea384c] transition-colors" />
               </a>
             </div>
@@ -286,5 +275,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
