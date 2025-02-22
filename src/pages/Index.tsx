@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -121,7 +122,10 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+          <h2 className="absolute top-20 w-full text-center z-10 text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
+            A LIMINAL FILMS PRODUCTION
+          </h2>
           <motion.div 
             initial={{ scale: 1.1 }} 
             animate={heroInView ? { scale: 1 } : {}} 
@@ -141,17 +145,14 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-left space-y-8 max-w-xl"
+              className="text-left space-y-8 max-w-xl relative after:absolute after:inset-[-30px] after:border-[3px] after:border-white/20"
             >
-              <h2 className="text-white md:text-2xl font-light tracking-[0.2em] uppercase mb-4 text-base">
-                A LIMINAL FILMS PRODUCTION
-              </h2>
               <div>
                 <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
-                  <span className="block text-5xl md:text-6xl">WHAT</span>
-                  <span className="block text-6xl md:text-7xl">WE</span>
-                  <span className="block text-7xl md:text-8xl">HAVE</span>
-                  <span className="block text-8xl md:text-9xl">LEFT</span>
+                  <span className="block text-4xl md:text-5xl">WHAT</span>
+                  <span className="block text-5xl md:text-6xl">WE</span>
+                  <span className="block text-6xl md:text-7xl">HAVE</span>
+                  <span className="block text-7xl md:text-8xl">LEFT</span>
                 </h1>
                 <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
@@ -411,3 +412,4 @@ const Index = () => {
 };
 
 export default Index;
+
