@@ -1,7 +1,8 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Play } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -190,8 +191,9 @@ const Index = () => {
                 </p>
                 <button 
                   onClick={scrollToTrailer}
-                  className="btn-primary mt-8"
+                  className="btn-primary mt-8 inline-flex items-center gap-2"
                 >
+                  <Play size={20} />
                   View Trailer
                 </button>
               </div>

@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -31,7 +32,7 @@
            transform hover:scale-105
            relative
            after:absolute after:inset-[-4px]
-           after:rounded-full after:border-[3px] after:border-black/60
+           after:rounded-full after:border-[3px] after:border-[#ea384c]/60
            after:animate-[pulse_1.5s_cubic-bezier(0.4,0,0.6,1)_infinite];
   }
 }
