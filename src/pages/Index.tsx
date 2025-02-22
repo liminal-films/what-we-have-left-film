@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -70,8 +71,8 @@ const Index = () => {
               fetchPriority="high" 
             />
             <div className="absolute inset-0 lg:hidden" style={{
-              background: 'linear-gradient(to top, white 0%, rgba(255,255,255,0.4) 30px, transparent 100%)',
-              top: 'calc(100% - 255px)'
+              background: 'linear-gradient(to top, white 100%, rgba(255,255,255,0.8) 70%, transparent 0%)',
+              top: 'calc(100% - 285px)'
             }} />
           </motion.div>
 
@@ -269,3 +270,4 @@ const Index = () => {
 };
 
 export default Index;
+
