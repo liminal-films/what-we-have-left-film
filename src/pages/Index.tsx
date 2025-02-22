@@ -18,9 +18,7 @@ const recurringPriceIds = {
 };
 
 const Index = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -68,7 +66,7 @@ const Index = () => {
   };
 
   return <div className="overflow-x-hidden">
-      <section ref={heroRef} className="relative min-h-screen">
+      <section ref={heroRef} className="relative min-h-screen bg-black">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:z-0">
           <h2 className="absolute top-10 w-full text-center z-10 text-white text-sm md:text-lg font-light tracking-[0.2em] uppercase mb-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
             A LIMINAL FILMS PRODUCTION
@@ -79,8 +77,14 @@ const Index = () => {
           scale: 1
         } : {}} transition={{
           duration: 1.5
-        }} className="relative h-[75vh] lg:h-screen">
-            <img src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" alt="Player with medal in room" className="absolute inset-0 w-full h-full object-cover" />
+        }} className="relative h-[75vh] lg:h-screen bg-black">
+            <img 
+              src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" 
+              alt="Player with medal in room" 
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+              fetchPriority="high"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent lg:hidden" />
           </motion.div>
 
