@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -80,7 +81,7 @@ const Index = () => {
                   alt="WHAT WE HAVE LEFT"
                   className="w-full max-w-[500px] h-auto"
                 />
-                <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight">
+                <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight ml-5">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
                 <div className="absolute top-[calc(100%+0.5rem)] right-0">
@@ -266,3 +267,4 @@ const Index = () => {
 };
 
 export default Index;
+
