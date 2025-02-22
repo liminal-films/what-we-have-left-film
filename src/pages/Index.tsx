@@ -154,7 +154,7 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen">
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:z-0">
           <h2 className="absolute top-10 w-full text-center z-10 text-white text-sm md:text-xl font-light tracking-[0.2em] uppercase mb-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
             A LIMINAL FILMS PRODUCTION
           </h2>
@@ -177,7 +177,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-left space-y-8 max-w-xl -mt-20 lg:mt-0"
+              className="text-left space-y-8 max-w-xl -mt-20 lg:mt-0 relative z-10"
             >
               <div>
                 <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
