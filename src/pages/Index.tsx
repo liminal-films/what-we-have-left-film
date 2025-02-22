@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Facebook, Twitter, Instagram, Youtube, Play } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Play, Link } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -242,7 +242,10 @@ const Index = () => {
               className="w-full h-[400px] object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60 flex flex-col justify-end p-8">
-              <div className="text-gray-300 font-medium tracking-wide mb-2">CNN.COM</div>
+              <div className="text-gray-300 font-medium tracking-wide mb-2 flex items-center gap-2">
+                <Link size={16} />
+                CNN.COM
+              </div>
               <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#ea384c] transition-colors">
                 This all-migrant soccer team is chasing a dream together
               </h2>
