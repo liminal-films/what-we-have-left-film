@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -64,8 +63,8 @@ const Index = () => {
         <div className="relative grid grid-cols-1 lg:grid-cols-5 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-black/20 after:z-0">
           <motion.div initial={{ scale: 1.1 }} animate={heroInView ? { scale: 1 } : {}} transition={{ duration: 1.5 }} className="relative h-[75vh] lg:h-screen bg-white lg:col-span-3">
             <img 
-              src="/lovable-uploads/04680273-978c-4728-911c-a7fb4d17e39f.png" 
-              alt="Team members in red jerseys on field" 
+              src="/lovable-uploads/147d4822-5b81-4b2a-98bf-0065e44389b3.png" 
+              alt="Person in Rinascita Refugees jersey standing in front of a goal" 
               className="absolute inset-0 w-full h-full object-cover" 
               loading="eager" 
               fetchPriority="high" 
@@ -267,4 +266,3 @@ const Index = () => {
 };
 
 export default Index;
-
