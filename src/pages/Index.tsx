@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -129,7 +130,7 @@ const Index = () => {
             initial={{ scale: 1.1 }} 
             animate={heroInView ? { scale: 1 } : {}} 
             transition={{ duration: 1.5 }}
-            className="relative h-[50vh] lg:h-screen"
+            className="relative h-[70vh] -mt-20 lg:mt-0 lg:h-screen"
           >
             <img 
               src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" 
@@ -394,3 +395,4 @@ const Index = () => {
 };
 
 export default Index;
+
