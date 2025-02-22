@@ -82,10 +82,10 @@ const Index = () => {
                   <span className="block text-6xl sm:text-7xl lg:text-8xl mt-[-0.2em]">HAVE</span>
                   <span className="block text-7xl sm:text-8xl lg:text-9xl mt-[-0.2em]">LEFT</span>
                 </h1>
-                <p className="text-black text-xl sm:text-2xl mt-12 font-bold tracking-tight">
+                <p className="text-black text-lg sm:text-xl mt-12 font-bold tracking-tight">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
-                <div className="absolute top-[calc(100%+1rem)] right-0">
+                <div className="absolute top-[calc(100%+2.5rem)] right-0">
                   <img 
                     src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" 
                     alt="Liminal Films Logo" 
