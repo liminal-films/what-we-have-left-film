@@ -18,15 +18,7 @@ const recurringPriceIds = {
 };
 
 const Index = () => {
-  const {
-    toast
-  } = useToast();
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [customAmount, setCustomAmount] = useState("");
-  const [showCustomAmount, setShowCustomAmount] = useState(false);
-  const [isRecurring, setIsRecurring] = useState(false);
+  const { toast } = useToast();
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -39,10 +31,6 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
-  const [partnersRef, partnersInView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
@@ -50,26 +38,6 @@ const Index = () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
-
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success')) {
-      toast({
-        title: "Thank you for your donation!",
-        description: "Your support means the world to us.",
-        className: "bg-white text-black border border-gray-200"
-      });
-      window.history.replaceState({}, document.title, window.location.pathname);
-    } else if (urlParams.get('canceled')) {
-      toast({
-        title: "Donation canceled",
-        description: "No worries! You can try again whenever you're ready.",
-        variant: "destructive",
-        className: "bg-white text-black border border-gray-200"
-      });
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }, [toast]);
 
   useEffect(() => {
     const loadWistiaScripts = async () => {
@@ -93,58 +61,6 @@ const Index = () => {
       scripts.forEach(script => script.remove());
     };
   }, []);
-
-  const partners = [{
-    name: "Liminal Films",
-    logo: "/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png"
-  }, {
-    name: "Liverpool FC",
-    logo: "/lovable-uploads/585a9cdb-524f-47c2-86e7-ca55714a2907.png"
-  }, {
-    name: "St Louis City",
-    logo: "/lovable-uploads/238f9fa1-46ef-40f6-829d-dd7b76d1d515.png"
-  }, {
-    name: "Rinascita Refugees",
-    logo: "/lovable-uploads/07b7ddbb-c212-4d3f-9a29-90a917d885f6.png"
-  }, {
-    name: "Open Road",
-    logo: "/lovable-uploads/dbc858a8-0130-4422-9735-fcde12b228f6.png"
-  }, {
-    name: "Adobo",
-    logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png"
-  }];
-
-  const handleDonation = async (amount: number, priceId: string) => {
-    try {
-      setIsProcessing(true);
-      const {
-        data,
-        error
-      } = await supabase.functions.invoke('create-checkout', {
-        body: {
-          priceId,
-          email,
-          name,
-          successUrl: `${window.location.origin}?success=true`,
-          cancelUrl: `${window.location.origin}?canceled=true`
-        }
-      });
-      if (error) throw error;
-      if (data.sessionUrl) {
-        window.location.href = data.sessionUrl;
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      toast({
-        title: "Error",
-        description: "There was a problem processing your donation. Please try again.",
-        variant: "destructive",
-        className: "bg-white text-black border border-gray-200"
-      });
-    } finally {
-      setIsProcessing(false);
-    }
-  };
 
   const scrollToTrailer = () => {
     const trailerSection = document.getElementById('trailer-section');
@@ -201,7 +117,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="trailer-section" ref={trailerRef} className="bg-black section-padding">
+      <section ref={trailerRef} className="bg-black section-padding">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           animate={trailerInView ? { opacity: 1, y: 0 } : {}}
@@ -263,15 +179,12 @@ const Index = () => {
 
       <section ref={storyRef} className="section-padding bg-warm-gray">
         <div className="max-w-7xl mx-auto">
-          <motion.div initial={{
-          y: 50,
-          opacity: 0
-        }} animate={storyInView ? {
-          y: 0,
-          opacity: 1
-        } : {}} transition={{
-          duration: 0.8
-        }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <motion.div 
+            initial={{ y: 50, opacity: 0 }} 
+            animate={storyInView ? { y: 0, opacity: 1 } : {}} 
+            transition={{ duration: 0.8 }} 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start"
+          >
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">About the Film</h2>
               <p className="text-lg leading-relaxed">
@@ -306,36 +219,6 @@ const Index = () => {
         </div>
       </section>
 
-      <section ref={partnersRef} className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto">
-          <motion.div initial={{
-          y: 30,
-          opacity: 0
-        }} animate={partnersInView ? {
-          y: 0,
-          opacity: 1
-        } : {}} transition={{
-          duration: 0.8
-        }} className="text-center space-y-12">
-            <h2 className="text-3xl md:text-4xl font-bold">Our Partners</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-8 md:gap-12 items-center justify-items-center">
-              {partners.map((partner, index) => <motion.div key={partner.name} initial={{
-              y: 20,
-              opacity: 0
-            }} animate={partnersInView ? {
-              y: 0,
-              opacity: 1
-            } : {}} transition={{
-              duration: 0.5,
-              delay: index * 0.1
-            }} className={`flex items-center justify-center p-4 ${partner.name === "Liminal Films" ? "w-32 h-24 scale-130" : "w-32 h-24"}`}>
-                  <img src={partner.logo} alt={partner.name} className={`object-contain filter grayscale hover:grayscale-0 transition-all duration-300 ${partner.name === "Liminal Films" ? "max-h-20" : "max-h-20"}`} />
-                </motion.div>)}
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       <section id="support-section" className="section-padding">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Support the Making of This Film</h2>
@@ -344,60 +227,10 @@ const Index = () => {
             will support the completion of this important documentary.
           </p>
           <div className="glass-card p-8 space-y-6">
-            <div className="flex justify-center mb-6">
-              <div className="inline-flex items-center bg-gray-100 rounded-full p-1">
-                <button className={`px-4 py-2 rounded-full transition-all ${!isRecurring ? 'bg-white shadow-md' : ''}`} onClick={() => setIsRecurring(false)}>
-                  One-time
-                </button>
-                <button className={`px-4 py-2 rounded-full transition-all ${isRecurring ? 'bg-white shadow-md' : ''}`} onClick={() => setIsRecurring(true)}>
-                  Monthly
-                </button>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[25, 100, 250].map(amount => <button key={amount} className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
-                           shadow-lg shadow-[#ea384c]/20
-                           hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
-                           transition-all duration-300 
-                           transform hover:scale-105
-                           disabled:opacity-50 disabled:cursor-not-allowed`} onClick={() => handleDonation(amount, isRecurring ? recurringPriceIds[amount] : oneTimePriceIds[amount])} disabled={isProcessing}>
-                  ${amount}{isRecurring ? '/month' : ''}
-                </button>)}
-            </div>
-            {!isRecurring && <div className="space-y-4">
-                {showCustomAmount ? <div className="space-y-4">
-                    <input type="number" min="1" placeholder="Enter amount in USD" value={customAmount} onChange={e => setCustomAmount(e.target.value)} className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ea384c]" />
-                    <button className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
-                               shadow-lg shadow-[#ea384c]/20
-                               hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
-                               transition-all duration-300 
-                               transform hover:scale-105
-                               w-full
-                               disabled:opacity-50 disabled:cursor-not-allowed`} onClick={() => handleDonation(Number(customAmount), 'price_1Qsf4IIoUqNIiEfRUD67iqzk')} disabled={isProcessing || !customAmount || Number(customAmount) < 1}>
-                      Donate ${customAmount}
-                    </button>
-                    <button className="text-gray-600 underline" onClick={() => {
-                setShowCustomAmount(false);
-                setCustomAmount("");
-              }}>
-                      Cancel
-                    </button>
-                  </div> : <button className={`px-8 py-3 bg-[#ea384c] text-white rounded-full font-semibold 
-                             shadow-lg shadow-[#ea384c]/20
-                             hover:bg-[#ea384c]/90 hover:shadow-[#ea384c]/30
-                             transition-all duration-300 
-                             transform hover:scale-105
-                             w-full
-                             disabled:opacity-50 disabled:cursor-not-allowed`} onClick={() => setShowCustomAmount(true)} disabled={isProcessing}>
-                    Custom Amount
-                  </button>}
-              </div>}
-            <div className="flex items-center justify-center space-x-8 mt-12">
-              <img src="/lovable-uploads/d84235fe-12e4-4130-8f69-9c5b452446a5.png" alt="Payment methods: Mastercard, Visa, Google Pay, Apple Pay" className="max-h-12 object-contain" />
-            </div>
-            <div className="flex items-center justify-center mt-8">
-              <img src="/lovable-uploads/bc68834e-d708-47c0-bab5-f80bec59bd27.png" alt="Powered by Stripe" className="h-8 object-contain" />
-            </div>
+            <div className="text-2xl font-bold text-[#ea384c]">Coming Soon</div>
+            <p className="text-lg text-gray-600">
+              We're finalizing our donation platform. Check back soon to support this project.
+            </p>
           </div>
         </div>
       </section>
@@ -475,7 +308,7 @@ const Index = () => {
           <div className="mt-12 pt-8 border-t border-white/10">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <p className="text-sm">
-                �� {new Date().getFullYear()} What We Have Left. All rights reserved.
+                © {new Date().getFullYear()} What We Have Left. All rights reserved.
               </p>
               <div className="flex space-x-6">
                 <a href="#" className="text-sm hover:text-white transition-colors">
