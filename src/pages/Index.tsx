@@ -68,8 +68,8 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-white">
-        <div className="relative grid grid-cols-1 lg:grid-cols-5 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-black/20 after:z-0">
-          <motion.div initial={{ scale: 1.1 }} animate={heroInView ? { scale: 1 } : {}} transition={{ duration: 1.5 }} className="relative h-[75vh] lg:h-screen bg-white lg:col-span-3">
+        <div className="relative grid grid-cols-1 lg:grid-cols-20 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-black/20 after:z-0">
+          <motion.div initial={{ scale: 1.1 }} animate={heroInView ? { scale: 1 } : {}} transition={{ duration: 1.5 }} className="relative h-[75vh] lg:h-screen bg-white lg:col-span-13">
             <img 
               src="/lovable-uploads/04680273-978c-4728-911c-a7fb4d17e39f.png" 
               alt="Team members in red jerseys on field" 
@@ -80,7 +80,7 @@ const Index = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-white via-white/60 to-transparent lg:hidden" />
           </motion.div>
 
-          <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
+          <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-7">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 max-w-xl -mt-[225px] lg:mt-20 relative z-10 mb-16">
               <div>
                 <h1 className="text-[#EA384C] font-bold tracking-wider leading-[0.9] inline-flex flex-col items-start">
