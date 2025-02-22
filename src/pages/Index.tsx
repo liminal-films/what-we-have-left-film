@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -81,25 +80,36 @@ const Index = () => {
           </motion.div>
 
           <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 max-w-xl -mt-[225px] lg:mt-20 relative z-10 mb-16">
-              <div>
-                <h1 className="text-[#EA384C] font-bold tracking-wider leading-[0.9] inline-flex flex-col items-start">
-                  <span className="block text-4xl sm:text-5xl">WHAT</span>
-                  <span className="block text-5xl sm:text-6xl">WE</span>
-                  <span className="block text-6xl sm:text-7xl">HAVE</span>
-                  <span className="block text-7xl sm:text-8xl">LEFT</span>
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[225px] lg:mt-20 relative z-10 mb-16">
+              <div className="relative w-full">
+                <h1 className="text-[#EA384C] font-bold tracking-[-0.02em] leading-[0.85] inline-flex flex-col items-start">
+                  <span className="block text-6xl sm:text-7xl lg:text-8xl">WHAT</span>
+                  <span className="block text-6xl sm:text-7xl lg:text-8xl">WE</span>
+                  <span className="block text-6xl sm:text-7xl lg:text-8xl">HAVE</span>
+                  <span className="block text-6xl sm:text-7xl lg:text-8xl">LEFT</span>
                 </h1>
-                <p className="text-black text-lg sm:text-xl mt-8 font-light">
+                <p className="text-black text-2xl sm:text-3xl mt-12 font-light tracking-tight">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
-                <button onClick={scrollToTrailer} className="btn-primary mt-8 inline-flex items-center gap-2 bg-white text-black hover:bg-black/5">
-                  <Play size={20} />
-                  View Trailer
-                </button>
+                <div className="absolute bottom-0 right-0 -mb-24">
+                  <img 
+                    src="/lovable-uploads/bcd69b80-4746-4012-95f8-b3316e4c978b.png" 
+                    alt="Liminal Films Logo" 
+                    className="h-20 w-auto opacity-80" 
+                  />
+                </div>
               </div>
             </motion.div>
           </div>
         </div>
+        
+        <button 
+          onClick={scrollToTrailer} 
+          className="fixed bottom-8 right-8 z-50 btn-primary bg-black text-white hover:bg-black/90 flex items-center gap-2"
+        >
+          <Play size={20} />
+          View Trailer
+        </button>
       </section>
 
       <section id="trailer" ref={trailerRef} className="bg-black section-padding pb-12">
@@ -272,4 +282,3 @@ const Index = () => {
 };
 
 export default Index;
-
