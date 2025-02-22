@@ -1,7 +1,8 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Facebook, Twitter, Instagram, Youtube, Play, Link } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Play, Link, Video } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -209,6 +210,10 @@ const Index = () => {
           className="max-w-5xl mx-auto"
         >
           <div className="relative">
+            <div className="mb-4 flex items-center gap-2 text-white/80 font-medium tracking-wide">
+              <Video size={16} />
+              RINASCITA SIZZLE V2
+            </div>
             <style>
               {`
                 wistia-player[media-id='u24yuqqkli']:not(:defined) { 
@@ -489,3 +494,4 @@ const Index = () => {
 };
 
 export default Index;
+
