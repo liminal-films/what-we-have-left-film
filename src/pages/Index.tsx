@@ -199,7 +199,7 @@ const Index = () => {
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
         >
-          <h2 className="text-white text-3xl md:text-4xl font-bold text-center mb-8">View the Trailer</h2>
+          <h2 className="text-white text-2xl font-bold mb-8">View the Trailer</h2>
           <div className="relative">
             <style>
               {`
