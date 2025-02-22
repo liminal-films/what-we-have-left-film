@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -150,11 +149,11 @@ const Index = () => {
               A LIMINAL FILMS PRODUCTION
             </h2>
             <div className="flex flex-col items-center">
-              <h1 className="text-[#EA384C] font-bold tracking-wider leading-none md:text-8xl text-5xl space-y-2">
-                <span className="block">WHAT</span>
-                <span className="block">WE</span>
-                <span className="block">HAVE</span>
-                <span className="block">LEFT</span>
+              <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
+                <span className="block text-5xl md:text-6xl">WHAT</span>
+                <span className="block text-6xl md:text-7xl">WE</span>
+                <span className="block text-7xl md:text-8xl">HAVE</span>
+                <span className="block text-8xl md:text-9xl">LEFT</span>
               </h1>
               <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
                 Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
