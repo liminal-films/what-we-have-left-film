@@ -246,16 +246,36 @@ const Index = () => {
             <div className="space-y-4">
               <h3 className="text-white font-semibold text-lg">Follow Us</h3>
               <div className="flex space-x-4">
-                <a href="#" className="hover:text-white transition-colors">
+                <a 
+                  href="https://instagram.com/whatwehaveleft" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   <Instagram size={20} />
                 </a>
-                <a href="#" className="hover:text-white transition-colors">
+                <a 
+                  href="https://youtube.com/@whatwehaveleft" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   <Youtube size={20} />
                 </a>
-                <a href="#" className="hover:text-white transition-colors">
+                <a 
+                  href="https://facebook.com/whatwehaveleft" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   <Facebook size={20} />
                 </a>
-                <a href="#" className="hover:text-white transition-colors">
+                <a 
+                  href="https://twitter.com/whatwehaveleft" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
                   <Twitter size={20} />
                 </a>
               </div>
