@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -130,14 +129,14 @@ const Index = () => {
             initial={{ scale: 1.1 }} 
             animate={heroInView ? { scale: 1 } : {}} 
             transition={{ duration: 1.5 }}
-            className="relative h-[70vh] -mt-20 lg:mt-0 lg:h-screen"
+            className="relative h-[70vh] lg:h-screen"
           >
             <img 
               src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" 
               alt="Player with medal in room" 
               className="absolute inset-0 w-full h-full object-cover" 
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent lg:hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent lg:hidden" />
           </motion.div>
 
           <div className="relative bg-black min-h-[50vh] lg:min-h-screen flex items-center justify-center px-8 lg:px-12">
@@ -395,4 +394,3 @@ const Index = () => {
 };
 
 export default Index;
-
