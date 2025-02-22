@@ -27,7 +27,6 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        antonio: ["Antonio", "sans-serif"],
       },
       keyframes: {
         "fade-up": {
@@ -47,4 +46,3 @@ export default {
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
