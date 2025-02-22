@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -151,8 +152,13 @@ const Index = () => {
             <Link size={16} />
             CNN.COM ARTICLE
           </div>
-          <a href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" target="_blank" rel="noopener noreferrer" className="block relative overflow-hidden group">
-            <img src="/lovable-uploads/894fa30b-0804-4df5-b06e-d5a6c0d0c3d8.png" alt="Players training" className="w-full h-[400px] object-cover" />
+          <a href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             className="block relative overflow-hidden group rounded-2xl">
+            <img src="/lovable-uploads/894fa30b-0804-4df5-b06e-d5a6c0d0c3d8.png" 
+                 alt="Players training" 
+                 className="w-full h-[400px] object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60 flex flex-col justify-end p-8">
               <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#ea384c] transition-colors">
                 This all-migrant soccer team is chasing a dream together
@@ -168,9 +174,11 @@ const Index = () => {
               <Presentation size={16} />
               INVESTOR DECK
             </div>
-            <a href="#" className="block w-fit">
-              <Presentation size={48} className="text-white/80 hover:text-[#ea384c] transition-colors" />
-            </a>
+            <div className="bg-black/20 p-8 rounded-2xl">
+              <a href="#" className="block w-fit">
+                <Presentation size={48} className="text-white/80 hover:text-[#ea384c] transition-colors" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -283,3 +291,4 @@ const Index = () => {
 };
 
 export default Index;
+
