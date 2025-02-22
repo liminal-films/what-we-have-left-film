@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -81,12 +82,12 @@ const Index = () => {
                   <span className="block text-6xl sm:text-7xl lg:text-8xl mt-[-0.2em]">HAVE</span>
                   <span className="block text-7xl sm:text-8xl lg:text-9xl mt-[-0.2em]">LEFT</span>
                 </h1>
-                <p className="text-black text-2xl sm:text-3xl mt-12 font-light tracking-tight">
+                <p className="text-black text-xl sm:text-2xl mt-12 font-bold tracking-tight">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
-                <div className="absolute bottom-0 right-0 -mb-24">
+                <div className="absolute top-[calc(100%+1rem)] right-0">
                   <img 
-                    src="/lovable-uploads/bcd69b80-4746-4012-95f8-b3316e4c978b.png" 
+                    src="/lovable-uploads/56ec121c-4867-4fd6-963a-2d0aea243016.png" 
                     alt="Liminal Films Logo" 
                     className="h-20 w-auto opacity-80" 
                   />
