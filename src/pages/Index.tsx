@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -115,7 +116,7 @@ const Index = () => {
           <div className="relative">
             <div className="mb-4 flex items-center gap-2 text-white/80 font-medium tracking-wide">
               <Video size={16} />
-              RINASCITA SIZZLE V2
+              RINASCITA SIZZLE
             </div>
             <style>
               {`
@@ -272,3 +273,4 @@ const Index = () => {
 };
 
 export default Index;
+
