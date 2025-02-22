@@ -74,7 +74,7 @@ const Index = () => {
           </motion.div>
 
           <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[225px] lg:mt-20 relative z-10 mb-16">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[275px] lg:mt-0 relative z-10 mb-16">
               <div className="relative w-full">
                 <h1 className="text-[#EA384C] font-bold tracking-[-0.02em] leading-[0.75] inline-flex flex-col items-start">
                   <span className="block text-4xl sm:text-5xl lg:text-6xl">WHAT</span>
@@ -87,9 +87,9 @@ const Index = () => {
                 </p>
                 <div className="absolute top-[calc(100%+1rem)] right-0">
                   <img 
-                    src="/lovable-uploads/56ec121c-4867-4fd6-963a-2d0aea243016.png" 
+                    src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" 
                     alt="Liminal Films Logo" 
-                    className="h-20 w-auto opacity-80" 
+                    className="h-20 w-auto opacity-90" 
                   />
                 </div>
               </div>
