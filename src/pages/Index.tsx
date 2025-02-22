@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -52,26 +51,6 @@ const Index = () => {
     };
   }, []);
 
-  const partners = [{
-    name: "Liminal Films",
-    logo: "/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png"
-  }, {
-    name: "Liverpool FC",
-    logo: "/lovable-uploads/585a9cdb-524f-47c2-86e7-ca55714a2907.png"
-  }, {
-    name: "St Louis City",
-    logo: "/lovable-uploads/238f9fa1-46ef-40f6-829d-dd7b76d1d515.png"
-  }, {
-    name: "Rinascita Refugees",
-    logo: "/lovable-uploads/07b7ddbb-c212-4d3f-9a29-90a917d885f6.png"
-  }, {
-    name: "Open Road",
-    logo: "/lovable-uploads/dbc858a8-0130-4422-9735-fcde12b228f6.png"
-  }, {
-    name: "Adobo",
-    logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png"
-  }];
-
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('success')) {
@@ -91,6 +70,49 @@ const Index = () => {
       window.history.replaceState({}, document.title, window.location.pathname);
     }
   }, [toast]);
+
+  useEffect(() => {
+    const loadWistiaScripts = async () => {
+      const playerScript = document.createElement('script');
+      playerScript.src = 'https://fast.wistia.com/player.js';
+      playerScript.async = true;
+      
+      const embedScript = document.createElement('script');
+      embedScript.src = 'https://fast.wistia.com/embed/u24yuqqkli.js';
+      embedScript.async = true;
+      embedScript.type = 'module';
+      
+      document.head.appendChild(playerScript);
+      document.head.appendChild(embedScript);
+    };
+
+    loadWistiaScripts();
+    
+    return () => {
+      const scripts = document.querySelectorAll('script[src*="wistia.com"]');
+      scripts.forEach(script => script.remove());
+    };
+  }, []);
+
+  const partners = [{
+    name: "Liminal Films",
+    logo: "/lovable-uploads/90b95407-95dc-4f1d-8a1c-5ec6fce32544.png"
+  }, {
+    name: "Liverpool FC",
+    logo: "/lovable-uploads/585a9cdb-524f-47c2-86e7-ca55714a2907.png"
+  }, {
+    name: "St Louis City",
+    logo: "/lovable-uploads/238f9fa1-46ef-40f6-829d-dd7b76d1d515.png"
+  }, {
+    name: "Rinascita Refugees",
+    logo: "/lovable-uploads/07b7ddbb-c212-4d3f-9a29-90a917d885f6.png"
+  }, {
+    name: "Open Road",
+    logo: "/lovable-uploads/dbc858a8-0130-4422-9735-fcde12b228f6.png"
+  }, {
+    name: "Adobo",
+    logo: "/lovable-uploads/3f92a478-efa5-4e8a-9203-873e7921bd4c.png"
+  }];
 
   const handleDonation = async (amount: number, priceId: string) => {
     try {
@@ -186,21 +208,21 @@ const Index = () => {
           className="max-w-5xl mx-auto"
         >
           <div className="relative">
-            <script src="https://fast.wistia.com/player.js" async></script>
-            <script src="https://fast.wistia.com/embed/u24yuqqkli.js" async type="module"></script>
             <style>
-              {`wistia-player[media-id='u24yuqqkli']:not(:defined) { 
-                background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/u24yuqqkli/swatch'); 
-                display: block; 
-                filter: blur(5px); 
-                padding-top:52.92%; 
-              }`}
+              {`
+                wistia-player[media-id='u24yuqqkli']:not(:defined) { 
+                  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/u24yuqqkli/swatch'); 
+                  display: block; 
+                  filter: blur(5px); 
+                  padding-top: 52.92%; 
+                }
+              `}
             </style>
             <wistia-player 
               media-id="u24yuqqkli" 
               wistia-popover="true" 
               aspect="1.889763779527559"
-            ></wistia-player>
+            />
           </div>
         </motion.div>
       </section>
@@ -437,4 +459,3 @@ const Index = () => {
 };
 
 export default Index;
-
