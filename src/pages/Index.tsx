@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -60,7 +61,7 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-white">
-        <div className="relative grid grid-cols-1 lg:grid-cols-5 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-black/20 after:z-0">
+        <div className="relative grid grid-cols-1 lg:grid-cols-5 min-h-[85vh] lg:min-h-screen">
           <motion.div initial={{ scale: 1.1 }} animate={heroInView ? { scale: 1 } : {}} transition={{ duration: 1.5 }} className="relative h-[75vh] lg:h-screen bg-white lg:col-span-3">
             <img 
               src="/lovable-uploads/147d4822-5b81-4b2a-98bf-0065e44389b3.png" 
@@ -80,7 +81,7 @@ const Index = () => {
                   alt="WHAT WE HAVE LEFT"
                   className="w-full max-w-[500px] h-auto"
                 />
-                <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight ml-5">
+                <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight ml-5 mb-10">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
                 <div className="absolute top-[calc(100%+0.5rem)] right-0">
@@ -266,3 +267,4 @@ const Index = () => {
 };
 
 export default Index;
+
