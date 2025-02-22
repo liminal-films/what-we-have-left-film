@@ -89,7 +89,7 @@ const Index = () => {
                   <img 
                     src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" 
                     alt="Liminal Films Logo" 
-                    className="h-20 w-auto opacity-90" 
+                    className="h-14 w-auto opacity-90" 
                   />
                 </div>
               </div>
@@ -268,3 +268,4 @@ const Index = () => {
 };
 
 export default Index;
+
