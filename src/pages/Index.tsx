@@ -240,26 +240,44 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-6 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div className="space-y-4">
+              <h3 className="text-white font-semibold text-lg">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a href="#" className="hover:text-white transition-colors">
+                  <Instagram size={20} />
+                </a>
+                <a href="#" className="hover:text-white transition-colors">
+                  <Youtube size={20} />
+                </a>
+                <a href="#" className="hover:text-white transition-colors">
+                  <Facebook size={20} />
+                </a>
+                <a href="#" className="hover:text-white transition-colors">
+                  <Twitter size={20} />
+                </a>
+              </div>
+            </div>
+
+            <div className="space-y-4">
               <h3 className="text-white font-semibold text-lg">Quick Links</h3>
               <ul className="space-y-2">
                 <li>
-                  <a href="#" className="text-sm hover:text-white transition-colors">
-                    Our Story
+                  <a href="#trailer-section" className="text-sm hover:text-white transition-colors">
+                    View Trailer
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.cnn.com/interactive/2024/06/sport/refugee-soccer-italy-cnnphotos/" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-white transition-colors">
+                    CNN Article
                   </a>
                 </li>
                 <li>
                   <a href="#" className="text-sm hover:text-white transition-colors">
-                    Support Us
+                    Investor Deck
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-sm hover:text-white transition-colors">
-                    Press Kit
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-sm hover:text-white transition-colors">
-                    Contact
+                  <a href="#story-section" className="text-sm hover:text-white transition-colors">
+                    About the Film
                   </a>
                 </li>
               </ul>
@@ -271,26 +289,7 @@ const Index = () => {
                 <li className="text-sm">
                   <a href="mailto:info@whatwehaveleftfilm.com" className="hover:text-white transition-colors">info@whatwehaveleft.com</a>
                 </li>
-                
               </ul>
-            </div>
-
-            <div className="space-y-4">
-              <h3 className="text-white font-semibold text-lg">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="hover:text-white transition-colors">
-                  <Facebook size={20} />
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  <Instagram size={20} />
-                </a>
-                <a href="#" className="hover:text-white transition-colors">
-                  <Youtube size={20} />
-                </a>
-              </div>
             </div>
           </div>
 
