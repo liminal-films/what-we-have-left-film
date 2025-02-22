@@ -70,7 +70,7 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-black">
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:z-0">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 min-h-[85vh] md:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20 after:z-0">
           <h2 className="absolute top-10 w-full text-center z-10 text-white text-sm md:text-lg font-light tracking-[0.2em] uppercase mb-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
             A LIMINAL FILMS PRODUCTION
           </h2>
@@ -80,12 +80,12 @@ const Index = () => {
           scale: 1
         } : {}} transition={{
           duration: 1.5
-        }} className="relative h-[75vh] lg:h-screen bg-black">
+        }} className="relative h-[75vh] md:h-screen bg-black">
             <img src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" alt="Player with medal in room" className="absolute inset-0 w-full h-full object-cover" loading="eager" fetchPriority="high" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent lg:hidden" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent md:hidden" />
           </motion.div>
 
-          <div className="relative bg-black min-h-[50vh] lg:min-h-screen flex items-center justify-center px-8 lg:px-12">
+          <div className="relative bg-black min-h-[50vh] md:min-h-screen flex items-center justify-center px-8 lg:px-12">
             <motion.div initial={{
             opacity: 0,
             y: 30
@@ -193,7 +193,7 @@ const Index = () => {
           opacity: 1
         } : {}} transition={{
           duration: 0.8
-        }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        }} className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
               <h2 className="text-3xl md:text-4xl font-bold">About the Film</h2>
               <p className="text-lg leading-relaxed">
