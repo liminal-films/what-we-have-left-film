@@ -254,9 +254,7 @@ const Index = () => {
                 <li className="text-sm">
                   <a href="mailto:info@whatwehaveleftfilm.com" className="hover:text-white transition-colors">info@whatwehaveleft.com</a>
                 </li>
-                <li className="text-sm">
-                  Rome, Italy
-                </li>
+                
               </ul>
             </div>
 
