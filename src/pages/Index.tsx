@@ -237,16 +237,16 @@ const Index = () => {
             className="block relative overflow-hidden group"
           >
             <img 
-              src="/lovable-uploads/245feedd-f8c5-461d-8d5f-c6422ca172bb.png" 
+              src="/lovable-uploads/894fa30b-0804-4df5-b06e-d5a6c0d0c3d8.png" 
               alt="Players training" 
-              className="w-full h-[400px] object-cover object-top"
+              className="w-full h-[400px] object-cover"
             />
-            <div className="absolute inset-0 bg-black/60 flex flex-col justify-end p-8">
-              <div className="text-gray-300 font-medium mb-2">CNN.COM</div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60 flex flex-col justify-end p-8">
+              <div className="text-gray-300 font-medium tracking-wide mb-2">CNN.COM</div>
               <h2 className="text-white text-3xl md:text-4xl font-bold mb-4 group-hover:text-[#ea384c] transition-colors">
                 This all-migrant soccer team is chasing a dream together
               </h2>
-              <p className="text-gray-300 text-lg">
+              <p className="text-gray-300 text-lg leading-relaxed max-w-3xl">
                 Deep in the eighth tier of the Italian soccer league, far removed from the star-studded ranks of AC Milan and Juventus, there is an amateur team made up entirely of migrants.
               </p>
             </div>
