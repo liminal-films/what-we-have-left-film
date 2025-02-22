@@ -130,7 +130,7 @@ const Index = () => {
 
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen">
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-white/20">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 min-h-screen after:absolute after:inset-[30px] after:bottom-[100px] after:border-[3px] after:border-white/20">
           <h2 className="absolute top-10 w-full text-center z-10 text-white text-sm md:text-xl font-light tracking-[0.2em] uppercase mb-4 drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]">
             A LIMINAL FILMS PRODUCTION
           </h2>
@@ -186,7 +186,7 @@ const Index = () => {
         >
           <div style={{ padding: "52.92% 0 0 0", position: "relative" }}>
             <iframe 
-              src="https://player.vimeo.com/video/1059255107?h=5481b81c49&badge=0&autopause=0&player_id=0&app_id=58479" 
+              src="https://player.vimeo.com/video/1059255107?h=5481b81c49&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
               style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
