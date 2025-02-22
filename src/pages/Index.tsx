@@ -84,10 +84,10 @@ const Index = () => {
             <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[225px] lg:mt-20 relative z-10 mb-16">
               <div className="relative w-full">
                 <h1 className="text-[#EA384C] font-bold tracking-[-0.02em] leading-[0.75] inline-flex flex-col items-start">
-                  <span className="block text-5xl sm:text-6xl lg:text-7xl">WHAT</span>
-                  <span className="block text-6xl sm:text-7xl lg:text-8xl mt-[-0.2em]">WE</span>
-                  <span className="block text-7xl sm:text-8xl lg:text-9xl mt-[-0.2em]">HAVE</span>
-                  <span className="block text-8xl sm:text-9xl lg:text-[10rem] mt-[-0.2em]">LEFT</span>
+                  <span className="block text-4xl sm:text-5xl lg:text-6xl">WHAT</span>
+                  <span className="block text-5xl sm:text-6xl lg:text-7xl mt-[-0.2em]">WE</span>
+                  <span className="block text-6xl sm:text-7xl lg:text-8xl mt-[-0.2em]">HAVE</span>
+                  <span className="block text-7xl sm:text-8xl lg:text-9xl mt-[-0.2em]">LEFT</span>
                 </h1>
                 <p className="text-black text-2xl sm:text-3xl mt-12 font-light tracking-tight">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
