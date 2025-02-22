@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -111,7 +110,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="trailer" ref={trailerRef} className="bg-black section-padding">
+      <section id="trailer" ref={trailerRef} className="bg-black section-padding pb-12">
         <motion.div initial={{
         opacity: 0,
         y: 30
