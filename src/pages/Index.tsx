@@ -1,8 +1,7 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { Facebook, Twitter, Instagram, Youtube, Play, Link, Video, Presentation } from "lucide-react";
+import { Facebook, Twitter, Instagram, Youtube, Video, Link, Presentation } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -59,13 +58,6 @@ const Index = () => {
     };
   }, []);
 
-  const scrollToTrailer = () => {
-    const trailerSection = document.getElementById('trailer');
-    if (trailerSection) {
-      trailerSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-white">
         <div className="relative grid grid-cols-1 lg:grid-cols-5 min-h-[85vh] lg:min-h-screen after:absolute after:inset-[30px] after:border-[3px] after:border-black/20 after:z-0">
@@ -103,14 +95,6 @@ const Index = () => {
             </motion.div>
           </div>
         </div>
-        
-        <button 
-          onClick={scrollToTrailer} 
-          className="fixed bottom-8 right-8 z-50 btn-primary bg-black text-white hover:bg-black/90 flex items-center gap-2"
-        >
-          <Play size={20} />
-          View Trailer
-        </button>
       </section>
 
       <section id="trailer" ref={trailerRef} className="bg-black section-padding pb-12">
