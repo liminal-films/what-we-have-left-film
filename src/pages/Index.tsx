@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -274,16 +273,17 @@ const Index = () => {
           duration: 0.8
         }} className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">The Story</h2>
+              <h2 className="text-3xl md:text-4xl font-bold">About the Film</h2>
               <p className="text-lg leading-relaxed">
-                In Carmiano, southern Italy, a remarkable team of young asylum seekers 
-                has emerged. The Rinascita Refugees, composed of players from Guinea, 
-                Senegal, Gambia, Nigeria, and Mali, represents more than just a {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"} team – it's a symbol of hope and resilience.
+                Nestled in the heart of Italy, a group of West Africans who have lost everything unite 
+                to create the Rinascita Refugees {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"} team. Their shared passion for the sport becomes a vehicle to combat prejudice, 
+                rebuild their lives, and discover hope and community in an unfamiliar land.
               </p>
               <p className="text-lg leading-relaxed">
-                This feature-length documentary, created by Academy Award-winning 
-                professionals, tells their extraordinary journey from West Africa 
-                to becoming one of Puglia's top {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "soccer" : "football"} teams.
+                This compelling feature-length documentary captures their journeys both on and off the field, 
+                showcasing the challenges, the victories, and the unwavering spirit that transform the 
+                Rinascita Refugees into more than just a team—we'll watch them become a symbol of hope and 
+                resilience for their countries and the world.
               </p>
               <div className="mt-8">
                 <img src="/lovable-uploads/ce47ea8a-92db-41b0-baaf-86b945b53654.png" alt="FIGC Medal" className="w-full max-w-md mx-auto rounded-lg shadow-lg" />
@@ -494,4 +494,3 @@ const Index = () => {
 };
 
 export default Index;
-
