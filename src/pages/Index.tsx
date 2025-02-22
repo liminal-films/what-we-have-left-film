@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -129,7 +130,7 @@ const Index = () => {
             initial={{ scale: 1.1 }} 
             animate={heroInView ? { scale: 1 } : {}} 
             transition={{ duration: 1.5 }}
-            className="relative h-[70vh] lg:h-screen"
+            className="relative h-[65vh] lg:h-screen"
           >
             <img 
               src="/lovable-uploads/f1501e1d-7f1d-4327-91d8-7384f4e6e868.png" 
@@ -144,7 +145,7 @@ const Index = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={heroInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.8 }}
-              className="text-left space-y-8 max-w-xl"
+              className="text-left space-y-8 max-w-xl -mt-20 lg:mt-0"
             >
               <div>
                 <h1 className="text-[#EA384C] font-bold tracking-wider leading-none inline-flex flex-col items-start">
@@ -153,7 +154,7 @@ const Index = () => {
                   <span className="block text-6xl md:text-7xl">HAVE</span>
                   <span className="block text-7xl md:text-8xl">LEFT</span>
                 </h1>
-                <p className="text-white/90 text-lg md:text-xl mt-8 font-light">
+                <p className="text-white/90 text-lg md:text-xl mt-8 font-light pb-8">
                   Hope. Redemption. {/^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone) ? "Soccer" : "Football"}.
                 </p>
               </div>
@@ -394,3 +395,4 @@ const Index = () => {
 };
 
 export default Index;
+
