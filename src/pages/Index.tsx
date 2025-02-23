@@ -198,7 +198,7 @@ const Index = () => {
             </div>
             <div className="space-y-8">
               <div className="relative h-[600px] rounded-2xl overflow-hidden shadow-xl">
-                <img src="/lovable-uploads/87302c11-6fd1-49fc-b670-9797aed4ff52.png" alt="Team member in red Refugees jersey against fence" className="w-full h-full object-cover" />
+                <img src="/lovable-uploads/0cc28e08-6487-4cf3-aa6a-b0605052e4f0.png" alt="Team celebrating with trophy" className="w-full h-full object-cover" />
               </div>
               <div className="bg-black/5 p-6 rounded-lg">
                 <p className="text-lg leading-relaxed">
