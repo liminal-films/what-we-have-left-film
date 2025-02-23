@@ -86,7 +86,7 @@ const Index = () => {
           }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[225px] lg:mt-0 relative z-10 mb-16">
               <div className="relative w-full -ml-[15px]">
                 <img src="/lovable-uploads/e6c1ecdf-3d6a-46d5-80f9-e3e95aa07f52.png" alt="WHAT WE HAVE LEFT" className="w-full max-w-[500px] h-auto" />
-                <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight ml-5 mb-5">
+                <p className="text-black text-lg mt-6 font-bold tracking-tight ml-5 mb-5 sm:text-lg">
                   Hope. Redemption. {sportTerm("Soccer")}.
                 </p>
                 <div className="absolute top-[calc(100%+0.5rem)] right-0">
