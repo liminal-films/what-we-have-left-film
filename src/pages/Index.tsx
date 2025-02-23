@@ -4,21 +4,20 @@ import { useInView } from "react-intersection-observer";
 import { Facebook, Twitter, Instagram, Youtube, Video, Link, Presentation } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
-
 const oneTimePriceIds = {
   25: 'price_1Qsf4IIoUqNIiEfRO16RNdB1',
   100: 'price_1Qsf4IIoUqNIiEfR5BBdwPvL',
   250: 'price_1Qsf4IIoUqNIiEfRylxI49Rq'
 };
-
 const recurringPriceIds = {
   25: 'price_1QsfYVIoUqNIiEfRdyxxD5W3',
   100: 'price_1QsfYVIoUqNIiEfRScITTLRj',
   250: 'price_1QsfYVIoUqNIiEfRoR2oF9N7'
 };
-
 const Index = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [heroRef, heroInView] = useInView({
     triggerOnce: true,
     threshold: 0.1
@@ -31,17 +30,14 @@ const Index = () => {
     triggerOnce: true,
     threshold: 0.1
   });
-
   const isUSTimeZone = /^America|Canada|Honolulu|Anchorage|Adak|Phoenix|Chicago|New_York/.test(Intl.DateTimeFormat().resolvedOptions().timeZone);
   const sportTerm = (text: string) => isUSTimeZone ? text : text.replace(/soccer/i, match => match.charAt(0) === 'S' ? 'Football' : 'football');
-
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth";
     return () => {
       document.documentElement.style.scrollBehavior = "auto";
     };
   }, []);
-
   useEffect(() => {
     const loadWistiaScripts = async () => {
       const playerScript = document.createElement('script');
@@ -60,41 +56,41 @@ const Index = () => {
       scripts.forEach(script => script.remove());
     };
   }, []);
-
   return <div className="overflow-x-hidden">
       <section ref={heroRef} className="relative min-h-screen bg-white">
         <div className="relative grid grid-cols-1 lg:grid-cols-5 min-h-[85vh] lg:min-h-screen">
-          <motion.div initial={{ scale: 1.1 }} animate={heroInView ? { scale: 1 } : {}} transition={{ duration: 1.5 }} className="relative h-[75vh] lg:h-screen bg-white lg:col-span-3">
-            <img 
-              src="/lovable-uploads/147d4822-5b81-4b2a-98bf-0065e44389b3.png" 
-              alt="Person in Rinascita Refugees jersey standing in front of a goal" 
-              className="absolute inset-0 w-full h-full object-cover lg:object-center object-[center_-80px]" 
-              loading="eager" 
-              fetchPriority="high" 
-            />
+          <motion.div initial={{
+          scale: 1.1
+        }} animate={heroInView ? {
+          scale: 1
+        } : {}} transition={{
+          duration: 1.5
+        }} className="relative h-[75vh] lg:h-screen bg-white lg:col-span-3">
+            <img src="/lovable-uploads/147d4822-5b81-4b2a-98bf-0065e44389b3.png" alt="Person in Rinascita Refugees jersey standing in front of a goal" className="absolute inset-0 w-full h-full object-cover lg:object-center object-[center_-80px]" loading="eager" fetchPriority="high" />
             <div className="absolute inset-0 lg:hidden" style={{
-              background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 30%, rgba(255,255,255,0.6) 60%, transparent 100%)',
-              top: 'calc(100% - 285px)'
-            }} />
+            background: 'linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.97) 30%, rgba(255,255,255,0.6) 60%, transparent 100%)',
+            top: 'calc(100% - 285px)'
+          }} />
           </motion.div>
 
           <div className="relative bg-white min-h-[50vh] lg:min-h-screen flex items-center justify-center px-6 sm:px-8 lg:px-12 lg:col-span-2">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={heroInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.8 }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[225px] lg:mt-0 relative z-10 mb-16">
+            <motion.div initial={{
+            opacity: 0,
+            y: 30
+          }} animate={heroInView ? {
+            opacity: 1,
+            y: 0
+          } : {}} transition={{
+            duration: 0.8,
+            delay: 0.8
+          }} className="text-left w-full flex justify-center lg:justify-start space-y-8 -mt-[225px] lg:mt-0 relative z-10 mb-16">
               <div className="relative w-full -ml-[15px]">
-                <img 
-                  src="/lovable-uploads/e6c1ecdf-3d6a-46d5-80f9-e3e95aa07f52.png"
-                  alt="WHAT WE HAVE LEFT"
-                  className="w-full max-w-[500px] h-auto"
-                />
+                <img src="/lovable-uploads/e6c1ecdf-3d6a-46d5-80f9-e3e95aa07f52.png" alt="WHAT WE HAVE LEFT" className="w-full max-w-[500px] h-auto" />
                 <p className="text-black text-lg sm:text-xl mt-6 font-bold tracking-tight ml-5 mb-5">
                   Hope. Redemption. {sportTerm("Soccer")}.
                 </p>
                 <div className="absolute top-[calc(100%+0.5rem)] right-0">
-                  <img 
-                    src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" 
-                    alt="Liminal Films Logo" 
-                    className="h-14 w-auto opacity-90" 
-                  />
+                  <img src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" alt="Liminal Films Logo" className="h-14 w-auto opacity-90" />
                 </div>
               </div>
             </motion.div>
@@ -190,9 +186,7 @@ const Index = () => {
               </p>
               <div className="mt-8">
                 <img src="/lovable-uploads/a5942f2a-89b9-4242-a14b-738c6c898940.png" alt="Coach meeting with Rinascita Refugees team" className="w-full max-w-md mx-auto rounded-lg shadow-lg" />
-                <p className="text-sm text-gray-600 mt-3 text-center italic">
-                  A team huddle during training session
-                </p>
+                <p className="text-sm text-gray-600 mt-3 text-center italic">A team huddle during a training session</p>
               </div>
             </div>
             <div className="space-y-8">
@@ -270,5 +264,4 @@ const Index = () => {
       </footer>
     </div>;
 };
-
 export default Index;
