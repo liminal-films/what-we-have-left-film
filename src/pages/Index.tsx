@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -190,9 +189,9 @@ const Index = () => {
                 resilience for their countries and the world.
               </p>
               <div className="mt-8">
-                <img src="/lovable-uploads/ce47ea8a-92db-41b0-baaf-86b945b53654.png" alt="FIGC Medal" className="w-full max-w-md mx-auto rounded-lg shadow-lg" />
+                <img src="/lovable-uploads/a5942f2a-89b9-4242-a14b-738c6c898940.png" alt="Coach meeting with Rinascita Refugees team" className="w-full max-w-md mx-auto rounded-lg shadow-lg" />
                 <p className="text-sm text-gray-600 mt-3 text-center italic">
-                  Recognition from the Italian Football Federation (FIGC)
+                  A team huddle during training session
                 </p>
               </div>
             </div>
@@ -273,4 +272,3 @@ const Index = () => {
 };
 
 export default Index;
-
