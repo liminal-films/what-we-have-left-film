@@ -90,7 +90,7 @@ const Index = () => {
                   Hope. Redemption. {sportTerm("Soccer")}.
                 </p>
                 <div className="absolute top-[calc(100%+0.5rem)] right-0">
-                  <img src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" alt="Liminal Films Logo" className="h-14 w-auto opacity-90" />
+                  <img src="/lovable-uploads/a3e69fe5-3ddf-4031-b41c-de1a715e423b.png" alt="Liminal Films Logo" className="h-14 w-auto opacity-100 object-scale-down" />
                 </div>
               </div>
             </motion.div>
